@@ -168,6 +168,7 @@
     <ClInclude Include="Src\Fps.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="Src\SceneTitle.h" />
+    <ClInclude Include="Src\SceneBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

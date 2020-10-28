@@ -18,5 +18,6 @@
     <ClInclude Include="Src\SceneManager.h" />
     <ClInclude Include="Src\SceneDebug.h" />
     <ClInclude Include="Src\SceneTitle.h" />
+    <ClInclude Include="Src\SceneBase.h" />
   </ItemGroup>
 </Project>

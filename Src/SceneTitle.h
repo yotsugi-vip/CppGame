@@ -1,3 +1,9 @@
 #pragma once
-void DrawTitle(void);
-void InputTitle(void);
+#include "SceneBase.h"
+
+class SceneTitle : public SceneBase {
+	void Draw();
+	void Initialize();
+	void Input();
+	void End();
+};

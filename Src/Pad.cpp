@@ -12,10 +12,9 @@ unsigned char Pad::Options_Button;
 unsigned char Pad::Touch_Pad;
 unsigned char Pad::Home_Button;
 
+
 void Pad::GetPadInput(void) {
 	DINPUT_JOYSTATE input;
-	int i;
-	int Color;
 
 	// ì¸óÕèÛë‘ÇéÊìæ
 	GetJoypadDirectInputState(DX_INPUT_PAD1, &input);
@@ -50,4 +49,25 @@ void Pad::GetPadInput(void) {
 	Pad::Options_Button = input.Buttons[9];
 	Pad::Touch_Pad = input.Buttons[13];
 	Pad::Home_Button = input.Buttons[12];
+}
+
+bool Pad::IsAbyButtonPush(void) {
+	if (Pad::R_Buttons.Circle == 128 ||
+		Pad::R_Buttons.Cross == 128 ||
+		Pad::R_Buttons.Square == 128 ||
+		Pad::R_Buttons.Triangle == 128 ||
+//		Pad::D_Pad.Up == 4500 ||
+//		Pad::D_Pad.Down == 22500 ||
+//		Pad::D_Pad.Left == 27000 ||
+//		Pad::D_Pad.Right == 13500 ||
+		Pad::L_Top.Button1 == 128 ||
+		Pad::L_Top.Button2 == 128 ||
+		Pad::R_Top.Button1 == 128 ||
+		Pad::R_Top.Button2 == 128 ||
+		Pad::Share_Button == 128 ||
+		Pad::Options_Button == 128 ||
+		Pad::Touch_Pad == 128) {
+		return true;
+	}
+	return false;
 }

@@ -9,7 +9,7 @@ void drawTenKey(int x, int y, int wh, int nowkey);
 void correctionInput(int* x, int* y);
 
 
-void DrawDebugInfo(void) {
+void SceneDebugInfo::Draw(void) {
 
     int Cr;
     int CorrectionR_X, CorrectionR_Y;
@@ -105,6 +105,12 @@ void DrawDebugInfo(void) {
         DrawCircle(CorrectionL_X / 10 + 260, CorrectionL_Y / 10 + 340, 25, Cr, FALSE);
     }
 }
+
+void SceneDebugInfo::End(){}
+void SceneDebugInfo::Initialize(){}
+void SceneDebugInfo::Input(){}
+
+
 
 int checkTenkey(int x, int y) {
     for (const auto& box : TEN_KEY) {

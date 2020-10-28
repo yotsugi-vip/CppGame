@@ -41,5 +41,6 @@ public:
 
 public:
 	static void GetPadInput(void);
+	static bool IsAbyButtonPush(void);
 };
 
