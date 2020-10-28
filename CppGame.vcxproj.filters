@@ -5,8 +5,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Src\Fps.cpp" />
+    <ClCompile Include="Src\Pad.cpp" />
+    <ClCompile Include="Src\SceneManager.cpp" />
+    <ClCompile Include="Src\SceneDebug.cpp" />
+    <ClCompile Include="Src\SceneTitle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
+    <ClInclude Include="Src\Fps.h" />
+    <ClInclude Include="Src\Pad.h" />
+    <ClInclude Include="Src\SceneManager.h" />
+    <ClInclude Include="Src\SceneDebug.h" />
+    <ClInclude Include="Src\SceneTitle.h" />
   </ItemGroup>
 </Project>
