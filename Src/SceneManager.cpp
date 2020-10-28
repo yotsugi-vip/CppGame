@@ -2,6 +2,7 @@
 #include "SceneDebug.h"
 #include "SceneTitle.h"
 #include "SceneBase.h"
+#include "SceneMenu.h"
 
 E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
 E_Scene SceneManager::NowScene = E_Scene::Scene_Title;
@@ -22,11 +23,6 @@ void SceneInit::Draw(){}
 void SceneInit::End(){}
 void SceneInit::Initialize(){}
 void SceneInit::Input(){}
-
-void SceneMenu::Draw() {}
-void SceneMenu::End() {}
-void SceneMenu::Initialize() {}
-void SceneMenu::Input() {}
 
 void SceneManager::Draw() {
 

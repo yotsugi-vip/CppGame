@@ -23,10 +23,3 @@ class SceneInit : public SceneBase {
 	void Input();
 	void End();
 };
-
-class SceneMenu : public SceneBase {
-	void Draw();
-	void Initialize();
-	void Input();
-	void End();
-};

@@ -36,7 +36,8 @@ void SceneTitle::Draw(void) {
 
 void SceneTitle::Input(void) {
     if (Pad::IsAbyButtonPush()) {
-        SceneManager::NowScene = E_Scene::Scene_Debug;
+        //SceneManager::NowScene = E_Scene::Scene_Debug;
+        SceneManager::NowScene = E_Scene::Scene_Menu;
     }
 }
 
