@@ -17,6 +17,6 @@ public:
 	int Y_end;
 	const char* String;
 	bool isSelected;
-
+	void (*func)();
 	void Draw();
 };

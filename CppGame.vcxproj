@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\SceneSelectMode.cpp" />
+    <ClCompile Include="Src\SceneGame.cpp" />
     <ClCompile Include="Src\SceneMenu.cpp" />
     <ClCompile Include="Src\SceneDebug.cpp" />
     <ClCompile Include="Src\SceneManager.cpp" />
@@ -163,6 +165,8 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\SceneSelectMode.h" />
+    <ClInclude Include="Src\SceneGame.h" />
     <ClInclude Include="Src\SceneMenu.h" />
     <ClInclude Include="Src\SceneDebug.h" />
     <ClInclude Include="Src\SceneManager.h" />
@@ -171,6 +175,10 @@
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="Src\SceneTitle.h" />
     <ClInclude Include="Src\SceneBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="asset\back_pink.png" />
+    <Image Include="asset\joji_shadow.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

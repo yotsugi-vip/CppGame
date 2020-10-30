@@ -1,0 +1,1333 @@
+#UserShotData
+ShotImage = ".\img\_shot.png"
+
+ShotData{
+	id=1
+	rect=(0,0,11,11)
+	delay_color=(255,32,32)
+	angular_velocity=-5
+}
+ShotData{
+	id=2
+	rect=(12,0,23,11)
+	delay_color=(192,128,32)
+	angular_velocity=-5
+}
+ShotData{
+	id=3
+	rect=(24,0,35,11)
+	delay_color=(192,192,32)
+	angular_velocity=-5
+}
+ShotData{
+	id=4
+	rect=(36,0,47,11)
+	delay_color=(128,192,32)
+	angular_velocity=-5
+}
+ShotData{
+	id=5
+	rect=(48,0,59,11)
+	delay_color=(32,255,32)
+	angular_velocity=-5
+}
+ShotData{
+	id=6
+	rect=(60,0,71,11)
+	delay_color=(32,192,128)
+	angular_velocity=-5
+}
+ShotData{
+	id=7
+	rect=(72,0,83,11)
+	delay_color=(32,192,192)
+	angular_velocity=-5
+}
+ShotData{
+	id=8
+	rect=(84,0,95,11)
+	delay_color=(32,128,192)
+	angular_velocity=-5
+}
+ShotData{
+	id=9
+	rect=(96,0,107,11)
+	delay_color=(32,32,255)
+	angular_velocity=-5
+}
+ShotData{
+	id=10
+	rect=(108,0,119,11)
+	delay_color=(128,32,192)
+	angular_velocity=-5
+}
+ShotData{
+	id=11
+	rect=(120,0,131,11)
+	delay_color=(192,32,192)
+	angular_velocity=-5
+}
+ShotData{
+	id=12
+	rect=(132,0,143,11)
+	delay_color=(192,32,128)
+	angular_velocity=-5
+}
+ShotData{
+	id=13
+	rect=(144,0,155,11)
+	delay_color=(192,192,192)
+	angular_velocity=-5
+}
+ShotData{
+	id=14
+	rect=(156,0,167,11)
+	delay_color=(128,128,128)
+	angular_velocity=-5
+}
+ShotData{
+	id=15
+	rect=(0,12,11,23)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=16
+	rect=(12,12,23,23)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=17
+	rect=(24,12,35,23)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=18
+	rect=(36,12,47,23)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=19
+	rect=(48,12,59,23)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=20
+	rect=(60,12,71,23)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=21
+	rect=(72,12,83,23)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=22
+	rect=(84,12,95,23)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=23
+	rect=(96,12,107,23)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=24
+	rect=(108,12,119,23)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=25
+	rect=(120,12,131,23)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=26
+	rect=(132,12,143,23)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=27
+	rect=(144,12,155,23)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=28
+	rect=(156,12,167,23)
+	delay_color=(128,128,128)
+	render=ADD
+}
+ShotData{
+	id=29
+	rect=(0,24,7,39)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=30
+	rect=(8,24,15,39)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=31
+	rect=(16,24,23,39)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=32
+	rect=(24,24,31,39)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=33
+	rect=(32,24,39,39)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=34
+	rect=(40,24,47,39)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=35
+	rect=(48,24,55,39)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=36
+	rect=(56,24,63,39)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=37
+	rect=(64,24,71,39)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=38
+	rect=(72,24,79,39)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=39
+	rect=(80,24,87,39)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=40
+	rect=(88,24,95,39)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=41
+	rect=(96,24,103,39)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=42
+	rect=(104,24,111,39)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=43
+	rect=(0,40,9,55)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=44
+	rect=(10,40,19,55)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=45
+	rect=(20,40,29,55)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=46
+	rect=(30,40,39,55)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=47
+	rect=(40,40,49,55)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=48
+	rect=(50,40,59,55)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=49
+	rect=(60,40,69,55)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=50
+	rect=(70,40,79,55)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=51
+	rect=(80,40,89,55)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=52
+	rect=(90,40,99,55)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=53
+	rect=(100,40,109,55)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=54
+	rect=(110,40,119,55)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=55
+	rect=(120,40,129,55)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=56
+	rect=(130,40,139,55)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=57
+	rect=(0,56,15,71)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=58
+	rect=(16,56,31,71)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=59
+	rect=(32,56,47,71)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=60
+	rect=(48,56,63,71)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=61
+	rect=(64,56,79,71)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=62
+	rect=(80,56,95,71)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=63
+	rect=(96,56,111,71)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=64
+	rect=(112,56,127,71)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=65
+	rect=(128,56,143,71)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=66
+	rect=(144,56,159,71)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=67
+	rect=(160,56,175,71)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=68
+	rect=(176,56,191,71)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=69
+	rect=(192,56,207,71)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=70
+	rect=(208,56,223,71)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=71
+	rect=(0,56,15,71)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=72
+	rect=(16,56,31,71)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=73
+	rect=(32,56,47,71)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=74
+	rect=(48,56,63,71)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=75
+	rect=(64,56,79,71)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=76
+	rect=(80,56,95,71)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=77
+	rect=(96,56,111,71)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=78
+	rect=(112,56,127,71)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=79
+	rect=(128,56,143,71)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=80
+	rect=(144,56,159,71)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=81
+	rect=(160,56,175,71)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=82
+	rect=(176,56,191,71)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=83
+	rect=(192,56,207,71)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=84
+	rect=(208,56,223,71)
+	delay_color=(128,128,128)
+	render=ADD
+}
+ShotData{
+	id=85
+	rect=(0,72,15,87)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=86
+	rect=(16,72,31,87)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=87
+	rect=(32,72,47,87)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=88
+	rect=(48,72,63,87)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=89
+	rect=(64,72,79,87)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=90
+	rect=(80,72,95,87)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=91
+	rect=(96,72,111,87)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=92
+	rect=(112,72,127,87)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=93
+	rect=(128,72,143,87)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=94
+	rect=(144,72,159,87)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=95
+	rect=(160,72,175,87)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=96
+	rect=(176,72,191,87)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=97
+	rect=(192,72,207,87)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=98
+	rect=(208,72,223,87)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=99
+	rect=(0,72,15,87)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=100
+	rect=(16,72,31,87)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=101
+	rect=(32,72,47,87)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=102
+	rect=(48,72,63,87)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=103
+	rect=(64,72,79,87)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=104
+	rect=(80,72,95,87)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=105
+	rect=(96,72,111,87)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=106
+	rect=(112,72,127,87)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=107
+	rect=(128,72,143,87)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=108
+	rect=(144,72,159,87)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=109
+	rect=(160,72,175,87)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=110
+	rect=(176,72,191,87)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=111
+	rect=(192,72,207,87)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=112
+	rect=(208,72,223,87)
+	delay_color=(128,128,128)
+	render=ADD
+}
+ShotData{
+	id=113
+	rect=(0,88,15,103)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=114
+	rect=(16,88,31,103)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=115
+	rect=(32,88,47,103)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=116
+	rect=(48,88,63,103)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=117
+	rect=(64,88,79,103)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=118
+	rect=(80,88,95,103)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=119
+	rect=(96,88,111,103)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=120
+	rect=(112,88,127,103)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=121
+	rect=(128,88,143,103)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=122
+	rect=(144,88,159,103)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=123
+	rect=(160,88,175,103)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=124
+	rect=(176,88,191,103)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=125
+	rect=(192,88,207,103)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=126
+	rect=(208,88,223,103)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=127
+	delay_color=(255,32,32)
+	AnimationData {
+		animation_data=(3,0,104,17,120)
+		animation_data=(3,0,120,17,136)
+		animation_data=(3,0,136,17,152)
+		animation_data=(3,0,152,17,168)
+		animation_data=(3,0,152,17,168)
+		animation_data=(3,0,136,17,152)
+		animation_data=(3,0,120,17,136)
+	}
+}
+ShotData{
+	id=128
+	delay_color=(192,128,32)
+	AnimationData {
+		animation_data=(3,16,104,33,120)
+		animation_data=(3,16,120,33,136)
+		animation_data=(3,16,136,33,152)
+		animation_data=(3,16,152,33,168)
+		animation_data=(3,16,152,33,168)
+		animation_data=(3,16,136,33,152)
+		animation_data=(3,16,120,33,136)
+	}
+}
+ShotData{
+	id=129
+	delay_color=(192,192,32)
+	AnimationData {
+		animation_data=(3,32,104,49,120)
+		animation_data=(3,32,120,49,136)
+		animation_data=(3,32,136,49,152)
+		animation_data=(3,32,152,49,168)
+		animation_data=(3,32,152,49,168)
+		animation_data=(3,32,136,49,152)
+		animation_data=(3,32,120,49,136)
+	}
+}
+ShotData{
+	id=130
+	delay_color=(128,192,32)
+	AnimationData {
+		animation_data=(3,48,104,65,120)
+		animation_data=(3,48,120,65,136)
+		animation_data=(3,48,136,65,152)
+		animation_data=(3,48,152,65,168)
+		animation_data=(3,48,152,65,168)
+		animation_data=(3,48,136,65,152)
+		animation_data=(3,48,120,65,136)
+	}
+}
+ShotData{
+	id=131
+	delay_color=(32,255,32)
+	AnimationData {
+		animation_data=(3,64,104,81,120)
+		animation_data=(3,64,120,81,136)
+		animation_data=(3,64,136,81,152)
+		animation_data=(3,64,152,81,168)
+		animation_data=(3,64,152,81,168)
+		animation_data=(3,64,136,81,152)
+		animation_data=(3,64,120,81,136)
+	}
+}
+ShotData{
+	id=132
+	delay_color=(32,192,128)
+	AnimationData {
+		animation_data=(3,80,104,97,120)
+		animation_data=(3,80,120,97,136)
+		animation_data=(3,80,136,97,152)
+		animation_data=(3,80,152,97,168)
+		animation_data=(3,80,152,97,168)
+		animation_data=(3,80,136,97,152)
+		animation_data=(3,80,120,97,136)
+	}
+}
+ShotData{
+	id=133
+	delay_color=(32,192,192)
+	AnimationData {
+		animation_data=(3,96,104,113,120)
+		animation_data=(3,96,120,113,136)
+		animation_data=(3,96,136,113,152)
+		animation_data=(3,96,152,113,168)
+		animation_data=(3,96,152,113,168)
+		animation_data=(3,96,136,113,152)
+		animation_data=(3,96,120,113,136)
+	}
+}
+ShotData{
+	id=134
+	delay_color=(32,128,192)
+	AnimationData {
+		animation_data=(3,112,104,129,120)
+		animation_data=(3,112,120,129,136)
+		animation_data=(3,112,136,129,152)
+		animation_data=(3,112,152,129,168)
+		animation_data=(3,112,152,129,168)
+		animation_data=(3,112,136,129,152)
+		animation_data=(3,112,120,129,136)
+	}
+}
+ShotData{
+	id=135
+	delay_color=(32,32,255)
+	AnimationData {
+		animation_data=(3,128,104,145,120)
+		animation_data=(3,128,120,145,136)
+		animation_data=(3,128,136,145,152)
+		animation_data=(3,128,152,145,168)
+		animation_data=(3,128,152,145,168)
+		animation_data=(3,128,136,145,152)
+		animation_data=(3,128,120,145,136)
+	}
+}
+ShotData{
+	id=136
+	delay_color=(128,32,192)
+	AnimationData {
+		animation_data=(3,144,104,161,120)
+		animation_data=(3,144,120,161,136)
+		animation_data=(3,144,136,161,152)
+		animation_data=(3,144,152,161,168)
+		animation_data=(3,144,152,161,168)
+		animation_data=(3,144,136,161,152)
+		animation_data=(3,144,120,161,136)
+	}
+}
+ShotData{
+	id=137
+	delay_color=(192,32,192)
+	AnimationData {
+		animation_data=(3,160,104,177,120)
+		animation_data=(3,160,120,177,136)
+		animation_data=(3,160,136,177,152)
+		animation_data=(3,160,152,177,168)
+		animation_data=(3,160,152,177,168)
+		animation_data=(3,160,136,177,152)
+		animation_data=(3,160,120,177,136)
+	}
+}
+ShotData{
+	id=138
+	delay_color=(192,32,128)
+	AnimationData {
+		animation_data=(3,176,104,193,120)
+		animation_data=(3,176,120,193,136)
+		animation_data=(3,176,136,193,152)
+		animation_data=(3,176,152,193,168)
+		animation_data=(3,176,152,193,168)
+		animation_data=(3,176,136,193,152)
+		animation_data=(3,176,120,193,136)
+	}
+}
+ShotData{
+	id=139
+	delay_color=(192,192,192)
+	AnimationData {
+		animation_data=(3,192,104,209,120)
+		animation_data=(3,192,120,209,136)
+		animation_data=(3,192,136,209,152)
+		animation_data=(3,192,152,209,168)
+		animation_data=(3,192,152,209,168)
+		animation_data=(3,192,136,209,152)
+		animation_data=(3,192,120,209,136)
+	}
+}
+ShotData{
+	id=140
+	delay_color=(128,128,128)
+	AnimationData {
+		animation_data=(3,208,104,225,120)
+		animation_data=(3,208,120,225,136)
+		animation_data=(3,208,136,225,152)
+		animation_data=(3,208,152,225,168)
+		animation_data=(3,208,152,225,168)
+		animation_data=(3,208,136,225,152)
+		animation_data=(3,208,120,225,136)
+	}
+}
+ShotData{
+	id=141
+	rect=(0,168,23,191)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=142
+	rect=(24,168,47,191)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=143
+	rect=(48,168,71,191)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=144
+	rect=(72,168,95,191)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=145
+	rect=(96,168,119,191)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=146
+	rect=(120,168,143,191)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=147
+	rect=(144,168,167,191)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=148
+	rect=(168,168,191,191)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=149
+	rect=(192,168,215,191)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=150
+	rect=(216,168,239,191)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=151
+	rect=(240,168,263,191)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=152
+	rect=(264,168,287,191)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=153
+	rect=(288,168,311,191)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=154
+	rect=(312,168,335,191)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=155
+	rect=(0,168,23,191)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=156
+	rect=(24,168,47,191)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=157
+	rect=(48,168,71,191)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=158
+	rect=(72,168,95,191)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=159
+	rect=(96,168,119,191)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=160
+	rect=(120,168,143,191)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=161
+	rect=(144,168,167,191)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=162
+	rect=(168,168,191,191)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=163
+	rect=(192,168,215,191)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=164
+	rect=(216,168,239,191)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=165
+	rect=(240,168,263,191)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=166
+	rect=(264,168,287,191)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=167
+	rect=(288,168,311,191)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=168
+	rect=(312,168,335,191)
+	delay_color=(128,128,128)
+	render=ADD
+}
+ShotData{
+	id=169
+	rect=(0,192,23,215)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=170
+	rect=(24,192,47,215)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=171
+	rect=(48,192,71,215)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=172
+	rect=(72,192,95,215)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=173
+	rect=(96,192,119,215)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=174
+	rect=(120,192,143,215)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=175
+	rect=(144,192,167,215)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=176
+	rect=(168,192,191,215)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=177
+	rect=(192,192,215,215)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=178
+	rect=(216,192,239,215)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=179
+	rect=(240,192,263,215)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=180
+	rect=(264,192,287,215)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=181
+	rect=(288,192,311,215)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=182
+	rect=(312,192,335,215)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=183
+	rect=(0,192,23,215)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=184
+	rect=(24,192,47,215)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=185
+	rect=(48,192,71,215)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=186
+	rect=(72,192,95,215)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=187
+	rect=(96,192,119,215)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=188
+	rect=(120,192,143,215)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=189
+	rect=(144,192,167,215)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=190
+	rect=(168,192,191,215)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=191
+	rect=(192,192,215,215)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=192
+	rect=(216,192,239,215)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=193
+	rect=(240,192,263,215)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=194
+	rect=(264,192,287,215)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=195
+	rect=(288,192,311,215)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=196
+	rect=(312,192,335,215)
+	delay_color=(128,128,128)
+	render=ADD
+}
+ShotData{
+	id=197
+	rect=(0,216,23,239)
+	delay_color=(255,32,32)
+}
+ShotData{
+	id=198
+	rect=(24,216,47,239)
+	delay_color=(192,128,32)
+}
+ShotData{
+	id=199
+	rect=(48,216,71,239)
+	delay_color=(192,192,32)
+}
+ShotData{
+	id=200
+	rect=(72,216,95,239)
+	delay_color=(128,192,32)
+}
+ShotData{
+	id=201
+	rect=(96,216,119,239)
+	delay_color=(32,255,32)
+}
+ShotData{
+	id=202
+	rect=(120,216,143,239)
+	delay_color=(32,192,128)
+}
+ShotData{
+	id=203
+	rect=(144,216,167,239)
+	delay_color=(32,192,192)
+}
+ShotData{
+	id=204
+	rect=(168,216,191,239)
+	delay_color=(32,128,192)
+}
+ShotData{
+	id=205
+	rect=(192,216,215,239)
+	delay_color=(32,32,255)
+}
+ShotData{
+	id=206
+	rect=(216,216,239,239)
+	delay_color=(128,32,192)
+}
+ShotData{
+	id=207
+	rect=(240,216,263,239)
+	delay_color=(192,32,192)
+}
+ShotData{
+	id=208
+	rect=(264,216,287,239)
+	delay_color=(192,32,128)
+}
+ShotData{
+	id=209
+	rect=(288,216,311,239)
+	delay_color=(192,192,192)
+}
+ShotData{
+	id=210
+	rect=(312,216,335,239)
+	delay_color=(128,128,128)
+}
+ShotData{
+	id=211
+	rect=(368,0,415,47)
+	delay_color=(255,32,32)
+	render=ADD
+}
+ShotData{
+	id=212
+	rect=(416,0,463,47)
+	delay_color=(192,128,32)
+	render=ADD
+}
+ShotData{
+	id=213
+	rect=(464,0,511,47)
+	delay_color=(192,192,32)
+	render=ADD
+}
+ShotData{
+	id=214
+	rect=(368,48,415,95)
+	delay_color=(128,192,32)
+	render=ADD
+}
+ShotData{
+	id=215
+	rect=(416,48,463,95)
+	delay_color=(32,255,32)
+	render=ADD
+}
+ShotData{
+	id=216
+	rect=(464,48,511,95)
+	delay_color=(32,192,128)
+	render=ADD
+}
+ShotData{
+	id=217
+	rect=(368,96,415,143)
+	delay_color=(32,192,192)
+	render=ADD
+}
+ShotData{
+	id=218
+	rect=(416,96,463,143)
+	delay_color=(32,128,192)
+	render=ADD
+}
+ShotData{
+	id=219
+	rect=(464,96,511,143)
+	delay_color=(32,32,255)
+	render=ADD
+}
+ShotData{
+	id=220
+	rect=(368,144,415,191)
+	delay_color=(128,32,192)
+	render=ADD
+}
+ShotData{
+	id=221
+	rect=(416,144,463,191)
+	delay_color=(192,32,192)
+	render=ADD
+}
+ShotData{
+	id=222
+	rect=(464,144,511,191)
+	delay_color=(192,32,128)
+	render=ADD
+}
+ShotData{
+	id=223
+	rect=(368,192,415,239)
+	delay_color=(192,192,192)
+	render=ADD
+}
+ShotData{
+	id=224
+	rect=(416,192,463,239)
+	delay_color=(128,128,128)
+	render=ADD
+}

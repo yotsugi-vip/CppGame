@@ -11,6 +11,8 @@
     <ClCompile Include="Src\SceneDebug.cpp" />
     <ClCompile Include="Src\SceneTitle.cpp" />
     <ClCompile Include="Src\SceneMenu.cpp" />
+    <ClCompile Include="Src\SceneGame.cpp" />
+    <ClCompile Include="Src\SceneSelectMode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -21,5 +23,11 @@
     <ClInclude Include="Src\SceneTitle.h" />
     <ClInclude Include="Src\SceneBase.h" />
     <ClInclude Include="Src\SceneMenu.h" />
+    <ClInclude Include="Src\SceneGame.h" />
+    <ClInclude Include="Src\SceneSelectMode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="asset\joji_shadow.png" />
+    <Image Include="asset\back_pink.png" />
   </ItemGroup>
 </Project>

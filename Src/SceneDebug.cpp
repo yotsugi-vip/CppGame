@@ -8,6 +8,10 @@ int checkTenkey(int x, int y);
 void drawTenKey(int x, int y, int wh, int nowkey);
 void correctionInput(int* x, int* y);
 
+static int x = 0;
+static int y = 0;
+static int bit = 0;
+
 
 void SceneDebugInfo::Draw(void) {
 
@@ -37,6 +41,9 @@ void SceneDebugInfo::Draw(void) {
 
     // ‰æ–Ê‚É“ü—Íó‘Ô‚ð•\Ž¦‚·‚é
     {
+        wsprintf(String, "%d x %d", x, y);
+        DrawString(400, 0, String, Cr);
+
         wsprintf(String, "L_X : %d => %d", Pad::L_Stick.X, CorrectionL_X);
         DrawString(0, 0, String, Cr);
 
@@ -107,7 +114,10 @@ void SceneDebugInfo::Draw(void) {
 }
 
 void SceneDebugInfo::End(){}
-void SceneDebugInfo::Initialize(){}
+
+void SceneDebugInfo::Initialize(){
+    GetScreenState(&x, &y, &bit);
+}
 void SceneDebugInfo::Input(){}
 
 
