@@ -12,4 +12,3 @@ public:
 	static int processingTime;
 	static void Wait(void);
 };
-

@@ -21,11 +21,12 @@ static void dummy();
 static unsigned int InputBuff[3] = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 
 static Button button[5] = {
-	{10, 200, 10, 30, Menu_1, false, dummy },
-	{10, 200, 35, 55, Menu_2, false, dummy},
-	{10, 200, 60, 80, Menu_3, false, dummy},
-	{10, 200, 85, 105, Menu_4, false, ChangeGameMode},
-	{10, 200, 110, 130, Menu_5, false, ChangeDebugMode},
+	// Xs  Xe   Ys   Ye   String  Slected Action
+	{  10, 200, 10,  30,  Menu_1, false,  dummy			  },
+	{  10, 200, 35,  55,  Menu_2, false,  dummy			  },
+	{  10, 200, 60,  80,  Menu_3, false,  dummy			  },
+	{  10, 200, 85,  105, Menu_4, false,  ChangeGameMode  },
+	{  10, 200, 110, 130, Menu_5, false,  ChangeDebugMode },
 };
 
 void SceneMenu::Initialize() {
@@ -33,8 +34,7 @@ void SceneMenu::Initialize() {
 }
 
 void SceneMenu::Draw() {
-	char String[64];
-
+	
 	for (auto b : button) {
 		b.Draw();
 	}

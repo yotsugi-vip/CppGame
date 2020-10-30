@@ -2,6 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="README.md" />
+    <None Include="Memo.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp" />
@@ -13,6 +14,7 @@
     <ClCompile Include="Src\SceneMenu.cpp" />
     <ClCompile Include="Src\SceneGame.cpp" />
     <ClCompile Include="Src\SceneSelectMode.cpp" />
+    <ClCompile Include="Src\SceneInit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -25,6 +27,7 @@
     <ClInclude Include="Src\SceneMenu.h" />
     <ClInclude Include="Src\SceneGame.h" />
     <ClInclude Include="Src\SceneSelectMode.h" />
+    <ClInclude Include="Src\SceneInit.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />
