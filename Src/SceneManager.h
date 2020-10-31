@@ -21,6 +21,7 @@ public:
 	static E_Scene NowScene;
 	static E_Scene PreScene;
 	static bool ShowDebugInfo;
+	static bool QuitGame;
 	static int GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)];
 
 public:

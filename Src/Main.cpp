@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+
     //Windowモードに変更
     ChangeWindowMode(TRUE);
 
@@ -19,8 +20,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     // シーン管理初期化処理
     SceneManager::Initialize();
 
-    // ＥＳＣキーが押されるまでループ
-    while ((GetJoypadInputState(DX_INPUT_KEY_PAD1) & PAD_INPUT_9) == 0) {
+    // メインループ
+    while (!SceneManager::QuitGame) {
 
         // メッセージ処理
         if (ProcessMessage() == -1) {

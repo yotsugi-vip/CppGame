@@ -17,6 +17,7 @@ E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
 E_Scene SceneManager::NowScene = E_Scene::Scene_Title;
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
 bool SceneManager::ShowDebugInfo = true;
+bool SceneManager::QuitGame = false;
 
 SceneInit sceneInit;
 SceneTitle sceneTitle;
@@ -134,14 +135,9 @@ static int MakePolkaDotsGraph(void) {
 	// 描画先変更
 	SetDrawScreen(gh);
 
-	// ストライプ20本
+	// 円模様
 	for (int i = 0; i <= 20; i++) {
-		if (i % 2 == 0) {
-			DrawBox(x / 20 * (i - 1), 0, x / 20 * i, y, cr_pink, true);
-		}
-		else {
-			DrawBox(x / 20 * (i - 1), 0, x / 20 * i, y, cr_cream, true);
-		}
+
 	}
 
 	// 描画先を裏画面に戻す

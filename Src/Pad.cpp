@@ -3,7 +3,7 @@
 
 T_Stick Pad::L_Stick;
 T_Stick Pad::R_Stick;
-T_Direction_Pad Pad::D_Pad;
+unsigned int Pad::D_Pad;
 T_Right_Buttons Pad::R_Buttons;
 T_Top_Buttons Pad::L_Top;
 T_Top_Buttons Pad::R_Top;
@@ -35,10 +35,7 @@ void Pad::GetPadInput(void) {
 	Pad::R_Top.Button2 = input.Buttons[7];
 	Pad::R_Top.Triger = input.Ry;
 
-	Pad::D_Pad.Up = input.POV[0];
-	Pad::D_Pad.Down = input.POV[1];
-	Pad::D_Pad.Left = input.POV[2];
-	Pad::D_Pad.Right = input.POV[3];
+	Pad::D_Pad = input.POV[0];
 
 	Pad::R_Buttons.Square = input.Buttons[0];
 	Pad::R_Buttons.Cross = input.Buttons[1];
@@ -56,10 +53,10 @@ bool Pad::IsAbyButtonPush(void) {
 		Pad::R_Buttons.Cross == 128 ||
 		Pad::R_Buttons.Square == 128 ||
 		Pad::R_Buttons.Triangle == 128 ||
-//		Pad::D_Pad.Up == 4500 ||
-//		Pad::D_Pad.Down == 22500 ||
-//		Pad::D_Pad.Left == 27000 ||
-//		Pad::D_Pad.Right == 13500 ||
+		Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN) ||
+		Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP) ||
+		Pad::D_Pad == static_cast<int>(D_Pad_Direction::RIGH) ||
+		Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP) ||
 		Pad::L_Top.Button1 == 128 ||
 		Pad::L_Top.Button2 == 128 ||
 		Pad::R_Top.Button1 == 128 ||
