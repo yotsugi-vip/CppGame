@@ -12,7 +12,7 @@ enum class E_Scene {
 
 enum class E_Common_GraphHandle {
 	GH_Stripe,
-	GH_Polka_Dots,
+	GH_Cream,
 	GH_MAX,
 };
 

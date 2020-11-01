@@ -26,6 +26,7 @@ void SceneTitle::Draw(void) {
 
     // 現在の画面サイズ取得
     GetScreenState(&X, &Y, &Bit);
+    DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
 
     // 白色の値を取得
     Cr = GetColor(255, 255, 255);

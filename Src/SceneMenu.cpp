@@ -3,10 +3,10 @@
 #include "Pad.h"
 #include <DxLib.h>
 
-static const char* Menu_1 = "Menu 1";
-static const char* Menu_2 = "Menu 2";
-static const char* Menu_3 = "Menu 3";
-static const char* Menu_4 = "Game Mode";
+static const char* Menu_1 = "Arcade";
+static const char* Menu_2 = "Practice";
+static const char* Menu_3 = "Config";
+static const char* Menu_4 = "Exit";
 static const char* Menu_5 = "Debug Mode";
 
 static int FontHandle_Menu = -1;
@@ -16,17 +16,18 @@ static int InputFrame = 0;
 
 static void ChangeDebugMode();
 static void ChangeGameMode();
+static void ExitGame();
 static void dummy();
 
 static unsigned int InputBuff[3] = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 
 static Button button[5] = {
 	// Xs  Xe   Ys   Ye   String  Slected Action
-	{  10, 200, 10,  30,  Menu_1, false,  dummy			  },
-	{  10, 200, 35,  55,  Menu_2, false,  dummy			  },
-	{  10, 200, 60,  80,  Menu_3, false,  dummy			  },
-	{  10, 200, 85,  105, Menu_4, false,  ChangeGameMode  },
-	{  10, 200, 110, 130, Menu_5, false,  ChangeDebugMode },
+	{  10, 200, 10,  30,  Menu_1, false,  ChangeGameMode	},
+	{  10, 200, 35,  55,  Menu_2, false,  dummy				},
+	{  10, 200, 60,  80,  Menu_3, false,  dummy				},
+	{  10, 200, 85,  105, Menu_4, false,  ExitGame			},
+	{  10, 200, 110, 130, Menu_5, false,  ChangeDebugMode	},
 };
 
 void SceneMenu::Initialize() {
@@ -34,7 +35,12 @@ void SceneMenu::Initialize() {
 }
 
 void SceneMenu::Draw() {
+
+	// 背景描画
+	DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
+
 	
+	// ボタン描画
 	for (auto b : button) {
 		b.Draw();
 	}
@@ -45,23 +51,23 @@ void SceneMenu::Input() {
 	// 前フレームと入力値が異なったら直ちにカーソル移動
 	if (InputBuff[0] == InputBuff[1] &&
 		InputBuff[1] == InputBuff[2] &&
-		InputBuff[2] == Pad::D_Pad.Up) {
-		if (Pad::D_Pad.Up == 0)
+		InputBuff[2] == Pad::D_Pad) {
+		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP))
 			SelectIndex--;
-		if (Pad::D_Pad.Up == 18000)
+		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN))
 			SelectIndex++;
 	}
 	else {
-		if (Pad::D_Pad.Up == 0)
+		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP))
 			InputFrame++;
-		if (Pad::D_Pad.Up == 18000)
+		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN))
 			InputFrame--;
 	}
 
 	// バッファ更新
 	InputBuff[2] = InputBuff[1];
 	InputBuff[1] = InputBuff[2];
-	InputBuff[0] = Pad::D_Pad.Up;
+	InputBuff[0] = Pad::D_Pad;
 
 	if (InputFrame > 5) {
 		InputFrame = 0;
@@ -101,9 +107,10 @@ void SceneMenu::End() {
 }
 
 void Button::Draw() {
-	unsigned int Cr = Button::isSelected ? GetColor(0, 0, 0) : GetColor(255, 255, 255);
+	unsigned int Cr = GetColor(0, 0, 0);
 
-	DrawBox(Button::X_start, Button::Y_start, Button::X_end, Button::Y_end, GetColor(255, 255, 255), Button::isSelected);
+	// メニュー描画
+	DrawBox(Button::X_start, Button::Y_start, Button::X_end, Button::Y_end, GetColor(0, 0, 0), Button::isSelected);
 	DrawStringToHandle(Button::X_start + 3, Button::Y_start + 1, Button::String, Cr, FontHandle_Menu);
 }
 
@@ -113,6 +120,10 @@ void ChangeDebugMode() {
 
 void ChangeGameMode() {
 	SceneManager::NowScene = E_Scene::Scene_Game;
+}
+
+void ExitGame() {
+	SceneManager::QuitGame = true;
 }
 
 void dummy() {}

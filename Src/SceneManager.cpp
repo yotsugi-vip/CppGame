@@ -10,13 +10,13 @@
 #include <DxLib.h>
 #include <numeric>
 
-static int MakePolkaDotsGraph(void);
+static int MakeBackScreenCream(void);
 static int MakeStripeGraph(void);
 
 E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
 E_Scene SceneManager::NowScene = E_Scene::Scene_Title;
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
-bool SceneManager::ShowDebugInfo = true;
+bool SceneManager::ShowDebugInfo = false;
 bool SceneManager::QuitGame = false;
 
 SceneInit sceneInit;
@@ -41,7 +41,7 @@ void SceneManager::Initialize() {
 
 	// 共通で使用するグラフィックデータの作成
 	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Stripe)] = MakeStripeGraph();
-	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Polka_Dots)] = MakePolkaDotsGraph();
+	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)] = MakeBackScreenCream();
 }
 
 
@@ -122,7 +122,7 @@ static int MakeStripeGraph(void) {
 	return gh;
 }
 
-static int MakePolkaDotsGraph(void) {
+static int MakeBackScreenCream(void) {
 	int gh;
 	int x, y, bit;
 	int cr_pink = GetColor(255, 200, 255);
@@ -135,10 +135,7 @@ static int MakePolkaDotsGraph(void) {
 	// 描画先変更
 	SetDrawScreen(gh);
 
-	// 円模様
-	for (int i = 0; i <= 20; i++) {
-
-	}
+	DrawBox(0, 0, x, y, cr_cream,true);
 
 	// 描画先を裏画面に戻す
 	SetDrawScreen(DX_SCREEN_BACK);
