@@ -1,11 +1,5 @@
 #include "SceneManager.h"
-#include "SceneDebug.h"
-#include "SceneTitle.h"
-#include "SceneBase.h"
-#include "SceneMenu.h"
-#include "SceneGame.h"
-#include "SceneSelectMode.h"
-#include "SceneInit.h"
+#include "DataManager.h"
 #include "Fps.h"
 #include <DxLib.h>
 #include <numeric>
@@ -19,26 +13,11 @@ int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] =
 bool SceneManager::ShowDebugInfo = false;
 bool SceneManager::QuitGame = false;
 
-SceneInit sceneInit;
-SceneTitle sceneTitle;
-SceneMenu sceneMenu;
-SceneDebugInfo sceneDebugInfo;
-SceneGame sceneGame;
-SceneSelectMode sceneSelectMode;
-
-SceneBase* SceneTable[] = {
-	&sceneInit,
-	&sceneTitle,
-	&sceneMenu,
-	&sceneSelectMode,
-	&sceneGame,
-	&sceneDebugInfo
-};
 
 void SceneManager::Initialize() {
 	// 初期化処理を行う
-	SceneTable[static_cast<int>(E_Scene::Scene_Initialize)]->Initialize();
-
+	DataManager::SceneTable[static_cast<int>(E_Scene::Scene_Initialize)]->Initialize();
+	
 	// 共通で使用するグラフィックデータの作成
 	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Stripe)] = MakeStripeGraph();
 	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)] = MakeBackScreenCream();
@@ -50,13 +29,13 @@ void SceneManager::Draw() {
 	// シーンの切り替え処理
 	if (SceneManager::PreScene != SceneManager::NowScene) {
 
-		SceneTable[static_cast<int>(SceneManager::PreScene)]->End();
-		SceneTable[static_cast<int>(SceneManager::NowScene)]->Initialize();
+		DataManager::SceneTable[static_cast<int>(SceneManager::PreScene)]->End();
+		DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Initialize();
 		SceneManager::PreScene = SceneManager::NowScene;
 	}
 
-	SceneTable[static_cast<int>(SceneManager::NowScene)]->Input();
-	SceneTable[static_cast<int>(SceneManager::NowScene)]->Draw();
+	DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Input();
+	DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Draw();
 
 	// デバッグ情報を画面に上書き
 	if (SceneManager::ShowDebugInfo) {

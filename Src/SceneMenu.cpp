@@ -127,3 +127,7 @@ void ExitGame() {
 }
 
 void dummy() {}
+
+void SceneMenu::Event_Push_Button(int button) {}
+void SceneMenu::Event_Release_Button(int button) {}
+void SceneMenu::Event_Keep_Button(int button, int onoff) {}

@@ -172,3 +172,7 @@ void correctionInput(int* x, int* y) {
         *y = f_y < -1000 ? -1000 : (int)f_y;
     }
 }
+
+void SceneDebugInfo::Event_Push_Button(int button) {}
+void SceneDebugInfo::Event_Release_Button(int button) {}
+void SceneDebugInfo::Event_Keep_Button(int button, int onoff) {}

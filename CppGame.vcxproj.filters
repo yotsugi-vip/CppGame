@@ -17,6 +17,7 @@
     <ClCompile Include="Src\SceneInit.cpp" />
     <ClCompile Include="Src\KeyBoad.cpp" />
     <ClCompile Include="Src\Input.cpp" />
+    <ClCompile Include="Src\DataManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -32,6 +33,7 @@
     <ClInclude Include="Src\SceneInit.h" />
     <ClInclude Include="Src\KeyBoad.h" />
     <ClInclude Include="Src\Input.h" />
+    <ClInclude Include="Src\DataManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />

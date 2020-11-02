@@ -48,3 +48,7 @@ void SceneTitle::End(void) {
     DeleteFontToHandle(FontHandle_Title);
     DeleteFontToHandle(FontHandle_PushToStart);
 }
+
+void SceneTitle::Event_Push_Button(int button){}
+void SceneTitle::Event_Release_Button(int button){}
+void SceneTitle::Event_Keep_Button(int button, int onoff){}
