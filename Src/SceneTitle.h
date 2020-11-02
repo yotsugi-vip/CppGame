@@ -9,7 +9,7 @@ public:
 	void End();
 
 public:
-	void Event_Push_Button(int button);
-	void Event_Release_Button(int button);
-	void Event_Keep_Button(int button, int onoff);
+	void Event_Push_Button(E_Button_Type button);
+	void Event_Release_Button(E_Button_Type button);
+	void Event_Keep_Button(E_Button_Type button, E_Button_State onoff);
 };

@@ -17,6 +17,6 @@ void SceneSelectMode::End() {
 
 }
 
-void SceneSelectMode::Event_Push_Button(int button) {}
-void SceneSelectMode::Event_Release_Button(int button) {}
-void SceneSelectMode::Event_Keep_Button(int button, int onoff) {}
+void SceneSelectMode::Event_Push_Button(E_Button_Type button) {}
+void SceneSelectMode::Event_Release_Button(E_Button_Type button) {}
+void SceneSelectMode::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {}

@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Pad.h"
 #include <DxLib.h>
+#include "Input.h"
 
 static const char* Menu_1 = "Arcade";
 static const char* Menu_2 = "Practice";
@@ -13,6 +14,8 @@ static int FontHandle_Menu = -1;
 
 static int SelectIndex = 0;
 static int InputFrame = 0;
+
+static int FrameCount = 0;
 
 static void ChangeDebugMode();
 static void ChangeGameMode();
@@ -46,61 +49,7 @@ void SceneMenu::Draw() {
 	}
 }
 
-void SceneMenu::Input() {
-
-	// 前フレームと入力値が異なったら直ちにカーソル移動
-	if (InputBuff[0] == InputBuff[1] &&
-		InputBuff[1] == InputBuff[2] &&
-		InputBuff[2] == Pad::D_Pad) {
-		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP))
-			SelectIndex--;
-		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN))
-			SelectIndex++;
-	}
-	else {
-		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP))
-			InputFrame++;
-		if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN))
-			InputFrame--;
-	}
-
-	// バッファ更新
-	InputBuff[2] = InputBuff[1];
-	InputBuff[1] = InputBuff[2];
-	InputBuff[0] = Pad::D_Pad;
-
-	if (InputFrame > 5) {
-		InputFrame = 0;
-		SelectIndex--;
-	}
-
-	if (InputFrame < -5) {
-		InputFrame = 0;
-		SelectIndex++;
-	}
-
-
-	if (SelectIndex > 4) {
-		SelectIndex = 0;
-	}
-
-	if (SelectIndex < 0) {
-		SelectIndex = 4;
-	}
-
-	for (int i = 0; i < 5; i++) {
-		if (i == SelectIndex) {
-			button[i].isSelected = true;
-		}
-		else {
-			button[i].isSelected = false;
-		}
-	}
-
-	if (Pad::R_Buttons.Cross == 128) {
-		button[SelectIndex].func();
-	}
-}
+void SceneMenu::Input() { }
 
 void SceneMenu::End() {
 	DeleteFontToHandle(FontHandle_Menu);
@@ -128,6 +77,82 @@ void ExitGame() {
 
 void dummy() {}
 
-void SceneMenu::Event_Push_Button(int button) {}
-void SceneMenu::Event_Release_Button(int button) {}
-void SceneMenu::Event_Keep_Button(int button, int onoff) {}
+void SceneMenu::Event_Push_Button(E_Button_Type buttonType) {
+
+	FrameCount = 0;
+
+	switch (buttonType)
+	{
+	case E_Button_Type::Circle:
+		button[SelectIndex].func();
+		break;
+	case E_Button_Type::Up:
+		SelectIndex--;
+		if (SelectIndex < 0) {
+			SelectIndex = 4;
+		}
+		break;
+	case E_Button_Type::Down:
+		SelectIndex++;
+		if (SelectIndex > 4) {
+			SelectIndex = 0;
+		}
+		break;
+	default:
+		break;
+	}
+
+	for (int i = 0; i < 5; i++) {
+		if (i == SelectIndex) {
+			button[i].isSelected = true;
+		}
+		else {
+			button[i].isSelected = false;
+		}
+	}
+}
+
+void SceneMenu::Event_Release_Button(E_Button_Type button) {}
+
+void SceneMenu::Event_Keep_Button(E_Button_Type buttonType, E_Button_State onoff) {
+	if (onoff == E_Button_State::Button_On) {
+		switch (buttonType)
+		{
+		case E_Button_Type::Up:
+			if (FrameCount < 10) {
+				FrameCount++;
+			}
+			else {
+				FrameCount = 0;
+				SelectIndex--;
+				if (SelectIndex < 0) {
+					SelectIndex = 4;
+				}
+			}
+			break;
+		case E_Button_Type::Down:
+			if (FrameCount < 10) {
+				FrameCount++;
+			}
+			else {
+				FrameCount = 0;
+				SelectIndex++;
+				if (SelectIndex > 4) {
+					SelectIndex = 0;
+				}
+			}
+			break;
+		default:
+			break;
+		}
+
+		for (int i = 0; i < 5; i++) {
+			if (i == SelectIndex) {
+				button[i].isSelected = true;
+			}
+			else {
+				button[i].isSelected = false;
+			}
+		}
+	}
+}

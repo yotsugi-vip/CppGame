@@ -10,7 +10,7 @@ static int MakeStripeGraph(void);
 E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
 E_Scene SceneManager::NowScene = E_Scene::Scene_Title;
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
-bool SceneManager::ShowDebugInfo = false;
+bool SceneManager::ShowDebugInfo = true;
 bool SceneManager::QuitGame = false;
 
 

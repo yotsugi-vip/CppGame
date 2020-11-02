@@ -30,6 +30,6 @@ void Draw_BackGround() {
 	DrawGraph(370, 140, GraphHandle_joji, true);
 }
 
-void SceneGame::Event_Push_Button(int button) {}
-void SceneGame::Event_Release_Button(int button) {}
-void SceneGame::Event_Keep_Button(int button, int onoff) {}
+void SceneGame::Event_Push_Button(E_Button_Type button) {}
+void SceneGame::Event_Release_Button(E_Button_Type button) {}
+void SceneGame::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {}

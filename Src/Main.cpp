@@ -1,8 +1,8 @@
 #include "DxLib.h"
 #include "main.h"
 #include "Fps.h"
-#include "Pad.h"
 #include "SceneManager.h"
+#include "Input.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
@@ -31,8 +31,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         // •`‰æ‰Šú‰»
         ClearDrawScreen();
 
-        // ƒpƒbƒh‚P‚Ì“ü—Í‚ğæ“¾
-        Pad::GetPadInput();
+        // “ü—Íî•ñæ“¾
+        Input::Input_Main();
 
         // •`‰æˆ—
         SceneManager::Draw();

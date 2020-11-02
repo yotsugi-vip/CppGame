@@ -173,6 +173,6 @@ void correctionInput(int* x, int* y) {
     }
 }
 
-void SceneDebugInfo::Event_Push_Button(int button) {}
-void SceneDebugInfo::Event_Release_Button(int button) {}
-void SceneDebugInfo::Event_Keep_Button(int button, int onoff) {}
+void SceneDebugInfo::Event_Push_Button(E_Button_Type button) {}
+void SceneDebugInfo::Event_Release_Button(E_Button_Type button) {}
+void SceneDebugInfo::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {}

@@ -1,22 +1,49 @@
 #include "Input.h"
 #include "Pad.h"
 #include "SceneManager.h"
+#include "DataManager.h"
 
 T_INPUT Input::now;
 T_INPUT Input::pre;
 
-
 static int GetInputInfo(int val, int judge_on);
+static void EventCheck(int now, int pre, E_Button_Type button);
 
 int GetInputInfo(int val, int judge_on) {
 	int ret;
 	if (val == judge_on) {
-		ret = static_cast<int>(E_Button_Info::Button_On);
+		ret = static_cast<int>(E_Button_State::Button_On);
 	}
 	else {
-		ret = static_cast<int>(E_Button_Info::Button_Off);
+		ret = static_cast<int>(E_Button_State::Button_Off);
 	}
 	return ret;
+}
+
+void EventCheck(int now, int pre, E_Button_Type button) {
+	if (now != pre) {
+		if (now == static_cast<int>(E_Button_State::Button_On)) {
+			Input::Event_Push_Button(button);
+		}
+		else {
+			Input::Event_Release_Button(button);
+		}
+	}
+	else {
+		Input::Event_Keep_Button(button, (E_Button_State)now);
+	}
+}
+
+void Input::Input_Main() {
+
+	// Pad入力取得
+	Pad::GetPadInput();
+
+	// キーボード入力取得
+	// Keyboad Get
+
+	// イベント発行
+	Input::EventLoop();
 }
 
 void Input::EventLoop() {
@@ -27,54 +54,28 @@ void Input::EventLoop() {
 	Input::GetInput();
 
 	// 〇
-	if (Input::now.Circle != Input::pre.Circle) {
-		if (Input::now.Circle == static_cast<int>(E_Button_Info::Button_On)) {
-		}
-		else {
-		}
-	}
-	else {
-		// KEEP
-		if (Input::now.Circle == static_cast<int>(E_Button_Info::Button_On)) {
-		}
-		else {
-		}
-	}
+	EventCheck(Input::now.Circle, Input::pre.Circle, E_Button_Type::Circle);
 
 	// △押下
-	if (Input::now.Triange != Input::pre.Triange) {
-
-	}
+	EventCheck(Input::now.Triange, Input::pre.Triange, E_Button_Type::Triangle);
 
 	// □押下
-	if (Input::now.Square != Input::pre.Square) {
-
-	}
+	EventCheck(Input::now.Square, Input::pre.Square, E_Button_Type::Square);
 
 	// ×押下
-	if (Input::now.Cross != Input::pre.Cross) {
-
-	}
+	EventCheck(Input::now.Cross, Input::pre.Cross, E_Button_Type::Cross);
 
 	// 上押下
-	if (Input::now.Up != Input::pre.Up) {
-
-	}
+	EventCheck(Input::now.Up, Input::pre.Up, E_Button_Type::Up);
 
 	// 下押下
-	if (Input::now.Down != Input::pre.Down) {
-
-	}
+	EventCheck(Input::now.Down, Input::pre.Down, E_Button_Type::Down);
 
 	// 左押下
-	if (Input::now.Left != Input::pre.Left) {
-
-	}
+	EventCheck(Input::now.Left, Input::pre.Left, E_Button_Type::Left);
 
 	// 右押下
-	if (Input::now.Right != Input::pre.Right) {
-
-	}
+	EventCheck(Input::now.Right, Input::pre.Right, E_Button_Type::Right);
 }
 
 void Input::GetInput() {
@@ -88,15 +89,14 @@ void Input::GetInput() {
 	Input::now.Right = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::RIGHT));
 }
 
-void Input::Event_Push_Button(int button) {
-
+void Input::Event_Push_Button(E_Button_Type button) {
+	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Push_Button(button);
 }
 
-void Input::Event_Release_Button(int button) {
-
+void Input::Event_Release_Button(E_Button_Type button) {
+	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Release_Button(button);
 }
 
-
-void Input::Event_Keep_Button(int button, int onoff) {
-
+void Input::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {
+	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Keep_Button(button, onoff);
 }

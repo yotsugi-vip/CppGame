@@ -36,10 +36,7 @@ void SceneTitle::Draw(void) {
 }
 
 void SceneTitle::Input(void) {
-    if (Pad::IsAbyButtonPush()) {
-        //SceneManager::NowScene = E_Scene::Scene_Debug;
-        SceneManager::NowScene = E_Scene::Scene_Menu;
-    }
+
 }
 
 void SceneTitle::End(void) {
@@ -49,6 +46,9 @@ void SceneTitle::End(void) {
     DeleteFontToHandle(FontHandle_PushToStart);
 }
 
-void SceneTitle::Event_Push_Button(int button){}
-void SceneTitle::Event_Release_Button(int button){}
-void SceneTitle::Event_Keep_Button(int button, int onoff){}
+void SceneTitle::Event_Push_Button(E_Button_Type button) {
+    SceneManager::NowScene = E_Scene::Scene_Menu;
+}
+
+void SceneTitle::Event_Release_Button(E_Button_Type button){}
+void SceneTitle::Event_Keep_Button(E_Button_Type button, E_Button_State onoff){}
