@@ -22,7 +22,7 @@ enum class D_Pad_Direction {
 	UP = 0,
 	DOWN = 18000,
 	LEFT = 27000,
-	RIGH = 9000
+	RIGHT = 9000
 };
 
 enum class Button_Info {

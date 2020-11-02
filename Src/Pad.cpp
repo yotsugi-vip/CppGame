@@ -55,7 +55,7 @@ bool Pad::IsAbyButtonPush(void) {
 		Pad::R_Buttons.Triangle == 128 ||
 		Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN) ||
 		Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP) ||
-		Pad::D_Pad == static_cast<int>(D_Pad_Direction::RIGH) ||
+		Pad::D_Pad == static_cast<int>(D_Pad_Direction::RIGHT) ||
 		Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP) ||
 		Pad::L_Top.Button1 == 128 ||
 		Pad::L_Top.Button2 == 128 ||
