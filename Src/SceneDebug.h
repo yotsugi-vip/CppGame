@@ -6,7 +6,6 @@ class SceneDebugInfo : public SceneBase, public EventBase
 public:
 	void Draw();
 	void Initialize();
-	void Input();
 	void End();
 
 public:

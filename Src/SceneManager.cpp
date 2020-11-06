@@ -34,7 +34,6 @@ void SceneManager::Draw() {
 		SceneManager::PreScene = SceneManager::NowScene;
 	}
 
-	DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Input();
 	DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Draw();
 
 	// デバッグ情報を画面に上書き

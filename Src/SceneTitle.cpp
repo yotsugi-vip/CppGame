@@ -28,16 +28,12 @@ void SceneTitle::Draw(void) {
     GetScreenState(&X, &Y, &Bit);
     DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
 
-    // ”’F‚Ì’l‚ğæ“¾
-    Cr = GetColor(255, 255, 255);
+    Cr = GetColor(0, 0, 0);
 
     DrawStringToHandle((X - Width_TITLE) / 2, Y / 2 -50, "T H I S   I S   T I T L E", Cr, FontHandle_Title);
     DrawStringToHandle((X - Width_PTS) / 2, Y / 2 + 20, "push to start", Cr, FontHandle_PushToStart);
 }
 
-void SceneTitle::Input(void) {
-
-}
 
 void SceneTitle::End(void) {
 

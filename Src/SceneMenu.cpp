@@ -3,6 +3,7 @@
 #include "Pad.h"
 #include <DxLib.h>
 #include "Input.h"
+#include "Component.h"
 
 static const char* Menu_1 = "Arcade";
 static const char* Menu_2 = "Practice";
@@ -25,12 +26,12 @@ static void dummy();
 static unsigned int InputBuff[3] = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 
 static Button button[5] = {
-	// Xs  Xe   Ys   Ye   String  Slected Action
-	{  10, 200, 10,  30,  Menu_1, false,  ChangeGameMode	},
-	{  10, 200, 35,  55,  Menu_2, false,  dummy				},
-	{  10, 200, 60,  80,  Menu_3, false,  dummy				},
-	{  10, 200, 85,  105, Menu_4, false,  ExitGame			},
-	{  10, 200, 110, 130, Menu_5, false,  ChangeDebugMode	},
+	// Xs  Ys   Xe   Ye   String  Slected Action
+	{  10, 10,  200, 30,  Menu_1, false,  ChangeGameMode	},
+	{  10, 35,  200, 55,  Menu_2, false,  dummy				},
+	{  10, 60,  200, 80,  Menu_3, false,  dummy				},
+	{  10, 85,  200, 105, Menu_4, false,  ExitGame			},
+	{  10, 110, 200, 130, Menu_5, false,  ChangeDebugMode	},
 };
 
 void SceneMenu::Initialize() {
@@ -49,8 +50,6 @@ void SceneMenu::Draw() {
 	}
 }
 
-void SceneMenu::Input() { }
-
 void SceneMenu::End() {
 	DeleteFontToHandle(FontHandle_Menu);
 }
@@ -68,7 +67,7 @@ void ChangeDebugMode() {
 }
 
 void ChangeGameMode() {
-	SceneManager::NowScene = E_Scene::Scene_Game;
+	SceneManager::NowScene = E_Scene::Scene_Select_Mode;
 }
 
 void ExitGame() {
@@ -119,7 +118,7 @@ void SceneMenu::Event_Keep_Button(E_Button_Type buttonType, E_Button_State onoff
 		switch (buttonType)
 		{
 		case E_Button_Type::Up:
-			if (FrameCount < 10) {
+			if (FrameCount < 6) {
 				FrameCount++;
 			}
 			else {
@@ -131,7 +130,7 @@ void SceneMenu::Event_Keep_Button(E_Button_Type buttonType, E_Button_State onoff
 			}
 			break;
 		case E_Button_Type::Down:
-			if (FrameCount < 10) {
+			if (FrameCount < 6) {
 				FrameCount++;
 			}
 			else {

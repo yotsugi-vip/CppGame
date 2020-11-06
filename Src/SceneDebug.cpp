@@ -118,9 +118,6 @@ void SceneDebugInfo::End(){}
 void SceneDebugInfo::Initialize(){
     GetScreenState(&x, &y, &bit);
 }
-void SceneDebugInfo::Input(){}
-
-
 
 int checkTenkey(int x, int y) {
     for (const auto& box : TEN_KEY) {

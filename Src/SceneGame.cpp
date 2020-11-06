@@ -17,9 +17,6 @@ void SceneGame::Draw() {
 	Draw_BackGround();
 }
 
-void SceneGame::Input() {
-
-}
 
 void SceneGame::End() {
 

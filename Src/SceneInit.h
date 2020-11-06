@@ -6,7 +6,6 @@ public:
 	void Draw();
 	void End();
 	void Initialize();
-	void Input();
 
 public:
 	void Event_Push_Button(E_Button_Type button);
