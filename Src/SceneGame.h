@@ -13,3 +13,8 @@ public:
 	void Event_Keep_Button(E_Button_Type button, E_Button_State onoff);
 };
 
+typedef struct {
+	int x;
+	int y;
+	int Frame;
+} T_Player_Info;

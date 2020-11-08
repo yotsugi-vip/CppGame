@@ -7,8 +7,10 @@
 static int MakeBackScreenCream(void);
 static int MakeStripeGraph(void);
 
+E_Scene SceneManager::NowScene = E_Scene::Scene_Initialize;
+E_Scene SceneManager::NextScene = E_Scene::Scene_Title;
 E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
-E_Scene SceneManager::NowScene = E_Scene::Scene_Title;
+
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
 bool SceneManager::ShowDebugInfo = true;
 bool SceneManager::QuitGame = false;
@@ -27,14 +29,16 @@ void SceneManager::Initialize() {
 void SceneManager::Draw() {
 
 	// シーンの切り替え処理
-	if (SceneManager::PreScene != SceneManager::NowScene) {
+	if (SceneManager::NowScene != SceneManager::NextScene) {
 
-		DataManager::SceneTable[static_cast<int>(SceneManager::PreScene)]->End();
-		DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Initialize();
+		DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->End();
+		DataManager::SceneTable[static_cast<int>(SceneManager::NextScene)]->Initialize();
+
 		SceneManager::PreScene = SceneManager::NowScene;
+		SceneManager::NowScene = SceneManager::NextScene;
 	}
 
-	DataManager::SceneTable[static_cast<int>(SceneManager::NowScene)]->Draw();
+	DataManager::SceneTable[static_cast<int>(SceneManager::NextScene)]->Draw();
 
 	// デバッグ情報を画面に上書き
 	if (SceneManager::ShowDebugInfo) {

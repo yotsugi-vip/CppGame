@@ -11,8 +11,6 @@ static const char* Menu_3 = "Config";
 static const char* Menu_4 = "Exit";
 static const char* Menu_5 = "Debug Mode";
 
-static int FontHandle_Menu = -1;
-
 static int SelectIndex = 0;
 static int InputFrame = 0;
 
@@ -34,9 +32,7 @@ static Button button[5] = {
 	{  10, 110, 200, 130, Menu_5, false,  ChangeDebugMode	},
 };
 
-void SceneMenu::Initialize() {
-	FontHandle_Menu = CreateFontToHandle("Menu", 15, 4);
-}
+void SceneMenu::Initialize() {}
 
 void SceneMenu::Draw() {
 
@@ -51,23 +47,14 @@ void SceneMenu::Draw() {
 }
 
 void SceneMenu::End() {
-	DeleteFontToHandle(FontHandle_Menu);
-}
-
-void Button::Draw() {
-	unsigned int Cr = GetColor(0, 0, 0);
-
-	// ÉÅÉjÉÖÅ[ï`âÊ
-	DrawBox(Button::X_start, Button::Y_start, Button::X_end, Button::Y_end, GetColor(0, 0, 0), Button::isSelected);
-	DrawStringToHandle(Button::X_start + 3, Button::Y_start + 1, Button::String, Cr, FontHandle_Menu);
 }
 
 void ChangeDebugMode() {
-	SceneManager::NowScene = E_Scene::Scene_Debug;
+	SceneManager::NextScene = E_Scene::Scene_Debug;
 }
 
 void ChangeGameMode() {
-	SceneManager::NowScene = E_Scene::Scene_Select_Mode;
+	SceneManager::NextScene = E_Scene::Scene_Select_Mode;
 }
 
 void ExitGame() {
@@ -84,6 +71,9 @@ void SceneMenu::Event_Push_Button(E_Button_Type buttonType) {
 	{
 	case E_Button_Type::Circle:
 		button[SelectIndex].func();
+		break;
+	case E_Button_Type::Cross:
+		SceneManager::NextScene = E_Scene(static_cast<int>(SceneManager::NowScene) - 1);
 		break;
 	case E_Button_Type::Up:
 		SelectIndex--;

@@ -9,11 +9,38 @@
 #include "SceneInit.h"
 #include "Fps.h"
 
+enum class Fonts {
+	Menu = 0,
+	MAX
+};
+
+enum class Caractor {
+	Img_1 = 0,
+	Img_2,
+	Img_3,
+	Img_4,
+	Img_5,
+	Img_6,
+	Img_7,
+	Img_8,
+	Img_9,
+	Img_10,
+	Img_11,
+	Img_12,
+	Img_13,
+	Img_14,
+	Img_15,
+	Img_16,
+	MAX
+};
+
 class DataManager
 {
 public:
 	static SceneBase* SceneTable[];
 	static EventBase* EventTable[];
+	static int FontTable[];
+	static int CaractorImg[];
 
 public:
 	static SceneInit sceneInit;

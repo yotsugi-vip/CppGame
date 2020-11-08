@@ -18,6 +18,7 @@ enum class E_Common_GraphHandle {
 
 class SceneManager {
 public:
+	static E_Scene NextScene;
 	static E_Scene NowScene;
 	static E_Scene PreScene;
 	static bool ShowDebugInfo;

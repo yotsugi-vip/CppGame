@@ -90,13 +90,13 @@ void Input::GetInput() {
 }
 
 void Input::Event_Push_Button(E_Button_Type button) {
-	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Push_Button(button);
+	DataManager::EventTable[static_cast<int>(SceneManager::NextScene)]->Event_Push_Button(button);
 }
 
 void Input::Event_Release_Button(E_Button_Type button) {
-	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Release_Button(button);
+	DataManager::EventTable[static_cast<int>(SceneManager::NextScene)]->Event_Release_Button(button);
 }
 
 void Input::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {
-	DataManager::EventTable[static_cast<int>(SceneManager::NowScene)]->Event_Keep_Button(button, onoff);
+	DataManager::EventTable[static_cast<int>(SceneManager::NextScene)]->Event_Keep_Button(button, onoff);
 }

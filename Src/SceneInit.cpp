@@ -1,6 +1,10 @@
 #include "SceneInit.h"
+#include "DataManager.h"
+#include <DxLib.h>
 
-void SceneInit::Initialize() {}
+void SceneInit::Initialize() {
+	DataManager::FontTable[static_cast<int>(Fonts::Menu)] = CreateFontToHandle("Menu", 15, 4);
+}
 void SceneInit::Draw() {}
 void SceneInit::End() {}
 

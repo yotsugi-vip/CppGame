@@ -24,3 +24,6 @@ EventBase* DataManager::EventTable[] = {
 	&sceneGame,
 	&sceneDebugInfo
 };
+
+int DataManager::FontTable[static_cast<int>(Fonts::MAX)] = { 0 };
+int DataManager::CaractorImg[static_cast<int>(Caractor::MAX)] = { 0 };

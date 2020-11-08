@@ -43,7 +43,7 @@ void SceneTitle::End(void) {
 }
 
 void SceneTitle::Event_Push_Button(E_Button_Type button) {
-    SceneManager::NowScene = E_Scene::Scene_Menu;
+    SceneManager::NextScene = E_Scene::Scene_Menu;
 }
 
 void SceneTitle::Event_Release_Button(E_Button_Type button){}

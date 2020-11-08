@@ -40,5 +40,6 @@
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />
     <Image Include="asset\back_pink.png" />
+    <Image Include="asset\p.png" />
   </ItemGroup>
 </Project>

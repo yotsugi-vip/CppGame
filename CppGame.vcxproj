@@ -194,6 +194,7 @@
   <ItemGroup>
     <Image Include="asset\back_pink.png" />
     <Image Include="asset\joji_shadow.png" />
+    <Image Include="asset\p.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
