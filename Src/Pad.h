@@ -19,10 +19,14 @@ typedef struct {
 }T_Top_Buttons;
 
 enum class D_Pad_Direction {
-	UP = 0,
-	DOWN = 18000,
-	LEFT = 27000,
-	RIGHT = 9000
+	UP			= 0,
+	UP_RIGHT	= 4500,
+	RIGHT		= 9000,
+	DOWN_RIGHT	= 13500,
+	DOWN		= 18000,
+	DOWN_LEFT	= 22500,
+	LEFT		= 27000,
+	UP_LEFT		= 31500,
 };
 
 enum class Button_Info {

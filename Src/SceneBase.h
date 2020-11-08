@@ -1,8 +1,8 @@
 #pragma once
 
 enum class E_Button_State {
-	Button_On = 0,
-	Button_Off,
+	Button_Off = 0,
+	Button_On ,
 	MAX
 };
 

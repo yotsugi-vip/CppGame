@@ -3,8 +3,8 @@
 #include "SceneManager.h"
 #include "DataManager.h"
 
-T_INPUT Input::now;
-T_INPUT Input::pre;
+T_INPUT Input::now = { static_cast<int>(E_Button_State::Button_Off) };
+T_INPUT Input::pre = { static_cast<int>(E_Button_State::Button_Off) };
 
 static int GetInputInfo(int val, int judge_on);
 static void EventCheck(int now, int pre, E_Button_Type button);
@@ -83,10 +83,33 @@ void Input::GetInput() {
 	Input::now.Cross = GetInputInfo(Pad::R_Buttons.Cross, 128);
 	Input::now.Triange = GetInputInfo(Pad::R_Buttons.Triangle, 128);
 	Input::now.Square = GetInputInfo(Pad::R_Buttons.Square, 128);
+
+	
 	Input::now.Up = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::UP));
 	Input::now.Down = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN));
 	Input::now.Left = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::LEFT));
 	Input::now.Right = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::RIGHT));
+
+	
+	if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP_LEFT)) {
+		Input::now.Up = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::UP_LEFT));
+		Input::now.Left = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::UP_LEFT));
+	}
+
+	if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::UP_RIGHT)) {
+		Input::now.Up = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::UP_RIGHT));
+		Input::now.Right = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::UP_RIGHT));
+	}
+
+	if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN_LEFT)) {
+		Input::now.Down = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_LEFT));
+		Input::now.Left = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_LEFT));
+	}
+
+	if (Pad::D_Pad == static_cast<int>(D_Pad_Direction::DOWN_RIGHT)) {
+		Input::now.Down = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_RIGHT));
+		Input::now.Right = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_RIGHT));
+	}	
 }
 
 void Input::Event_Push_Button(E_Button_Type button) {

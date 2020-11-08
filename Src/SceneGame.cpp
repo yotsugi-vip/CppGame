@@ -8,7 +8,7 @@ static void DrawPlayer();
 
 static int GraphHandle_joji = 0;
 
-static T_Player_Info NowInfo_P = { 50,15,0 };
+static T_Player_Info NowInfo_P = { 180,400,0 };
 static T_Player_Info PreInfo_P = NowInfo_P;
 
 void SceneGame::Initialize() {
@@ -43,15 +43,42 @@ void Draw_BackGround() {
 
 void SceneGame::Event_Push_Button(E_Button_Type button) {}
 void SceneGame::Event_Release_Button(E_Button_Type button) {}
-void SceneGame::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {}
+void SceneGame::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {
+	switch (button)
+	{
+	case E_Button_Type::Left:
+		if (onoff == E_Button_State::Button_On) {
+			NowInfo_P.x -= 3;
+		}
+		break;
+	case E_Button_Type::Right:
+		if (onoff == E_Button_State::Button_On) {
+			NowInfo_P.x += 3;
+		}
+		break;
+	case E_Button_Type::Up:
+		if (onoff == E_Button_State::Button_On) {
+			NowInfo_P.y -= 3;
+		}
+		break;
+	case E_Button_Type::Down:
+		if (onoff == E_Button_State::Button_On) {
+			NowInfo_P.y += 3;
+		}
+		break;
+
+	default:
+		break;
+	}
+}
 
 void DrawPlayer() {
 	int drawHandle = 0;
+	int frame = NowInfo_P.Frame / 10;
 
-	if (NowInfo_P.x == PreInfo_P.x && 
-		NowInfo_P.y == PreInfo_P.y) {
+	if (NowInfo_P.x == PreInfo_P.x) {
 
-		switch (NowInfo_P.Frame/10) {
+		switch (frame) {
 		case 0:
 			drawHandle = DataManager::CaractorImg[0];
 			break;
@@ -66,8 +93,46 @@ void DrawPlayer() {
 			break;
 		}
 	}
+	else {
+		if (NowInfo_P.x > PreInfo_P.x) {
+			// ‰E•ûŒü‚ÉˆÚ“®
+			switch (frame)
+			{
+			case 0:
+				drawHandle = DataManager::CaractorImg[1];
+				break;
+			case 1:
+				drawHandle = DataManager::CaractorImg[5];
+				break;
+			case 2:
+				drawHandle = DataManager::CaractorImg[9];
+				break;
+			default:
+				drawHandle = DataManager::CaractorImg[1];
+				break;
+			}
+		}
+		else {
+			// ¶•ûŒü‚ÉˆÚ“®
+			switch (frame) {
+			case 0:
+				drawHandle = DataManager::CaractorImg[2];
+				break;
+			case 1:
+				drawHandle = DataManager::CaractorImg[6];
+				break;
+			case 2:
+				drawHandle = DataManager::CaractorImg[10];
+				break;
+			default:
+				drawHandle = DataManager::CaractorImg[2];
+				break;
+			}
+		}
+	}
 
 	DrawGraph(NowInfo_P.x, NowInfo_P.y, drawHandle, true);
+	PreInfo_P = NowInfo_P;
 
 	if (NowInfo_P.Frame > 30) {
 		NowInfo_P.Frame = 0;
