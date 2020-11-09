@@ -9,10 +9,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     //Windowモードに変更
     ChangeWindowMode(TRUE);
 
+    // 画面サイズを 1280 * 960 で固定
+    if (SetGraphMode(1280, 960, 32) == -1) {
+        return -1;
+    }
+
     // ＤＸライブラリ初期化処理
     if (DxLib_Init() == -1) {
         return -1;
-    }
+    } 
 
     // 描画先画面を裏画面にする
     SetDrawScreen(DX_SCREEN_BACK);

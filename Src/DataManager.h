@@ -40,7 +40,7 @@ public:
 	static SceneBase* SceneTable[];
 	static EventBase* EventTable[];
 	static int FontTable[];
-	static int CaractorImg[];
+	static int CaractorImg[static_cast<int>(Caractor::MAX)];
 
 public:
 	static SceneInit sceneInit;

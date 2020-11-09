@@ -5,6 +5,7 @@
 
 static void Draw_BackGround();
 static void DrawPlayer();
+static void CheckPlayerCoordinate(T_Player_Info* info);
 
 static int GraphHandle_joji = 0;
 
@@ -22,11 +23,10 @@ void SceneGame::Initialize() {
 }
 
 void SceneGame::Draw() {
-	int x, y, b;
-
-	GetScreenState(&x, &y, &b);
+	
 	Draw_BackGround();
-	DrawBox(10, 10, x * 2 / 3, y - 10, GetColor(0, 0, 0), true);
+
+	DrawBox(GAME_RANGE_START_X, GAME_RANGE_START_Y, GAME_RANGE_WIDTH, GAME_RANGE_HEIGHT, GetColor(0, 0, 0), true);
 
 	DrawPlayer();
 }
@@ -131,7 +131,14 @@ void DrawPlayer() {
 		}
 	}
 
-	DrawGraph(NowInfo_P.x, NowInfo_P.y, drawHandle, true);
+	// 入力座標範囲確認
+	CheckPlayerCoordinate(&NowInfo_P);
+
+	DrawBox(NowInfo_P.x, NowInfo_P.y, NowInfo_P.x + 96, NowInfo_P.y + 96, GetColor(100, 100, 100), true);
+	
+	//DrawGraph(NowInfo_P.x, NowInfo_P.y, drawHandle, true);
+	DrawExtendGraph(NowInfo_P.x, NowInfo_P.y, NowInfo_P.x + 96, NowInfo_P.y + 96, drawHandle, true);
+
 	PreInfo_P = NowInfo_P;
 
 	if (NowInfo_P.Frame > 30) {
@@ -139,5 +146,27 @@ void DrawPlayer() {
 	}
 	else {
 		NowInfo_P.Frame++;
+	}
+
+	// デバッグログ書き込み
+	wsprintf(SceneManager::DebugLog[static_cast<int>(E_Debug_Log_OverLay::PLAYER_COORDINATE)], "PLAYER COORDINATE X:%d Y:%d", NowInfo_P.x, NowInfo_P.y);
+}
+
+void CheckPlayerCoordinate( T_Player_Info *info) {
+	//64 * 64
+	if (info->x < GAME_RANGE_START_X - 16) {
+		info->x = GAME_RANGE_START_X - 16;
+	}
+
+	if (info->x > GAME_RANGE_WIDTH - 48) {
+		info->x = GAME_RANGE_WIDTH - 48;
+	}
+
+	if (info->y < GAME_RANGE_START_Y) {
+		info->y = GAME_RANGE_START_Y;
+	}
+
+	if (info->y > GAME_RANGE_HEIGHT - 64) {
+		info->y = GAME_RANGE_HEIGHT - 64;
 	}
 }

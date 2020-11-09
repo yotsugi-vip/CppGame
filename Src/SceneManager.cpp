@@ -12,6 +12,7 @@ E_Scene SceneManager::NextScene = E_Scene::Scene_Title;
 E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
 
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
+char SceneManager::DebugLog[][64] = { 0 };
 bool SceneManager::ShowDebugInfo = true;
 bool SceneManager::QuitGame = false;
 
@@ -49,30 +50,32 @@ void SceneManager::Draw() {
 void SceneManager::DebugInfoOverLay() {
 	
 	int Cr;
-	int x, y, bit;
+	int _x, _y, bit;
+	int log_y;
 	int gcd;
-	char String[64];
 	char FpsStr[64];
 
-	Cr = GetColor(0, 255, 0);
-
-	wsprintf(String, "FPS:%d",Fps::fpsAve);
-	DrawString(0, 0, String, Cr);
+	wsprintf(SceneManager::DebugLog[static_cast<int>(E_Debug_Log_OverLay::FPS)], "FPS:%d",Fps::fpsAve);
 
 	wsprintf(FpsStr, "");
 	for (auto f : Fps::fpsAveQueue) {
 		wsprintf(FpsStr, "%s %d", FpsStr, f);
 	}
-	wsprintf(String, "10SEC FPS BUFF:%s", FpsStr);
-	DrawString(0, 16, String, Cr);
+	wsprintf(SceneManager::DebugLog[static_cast<int>(E_Debug_Log_OverLay::FPS_BUFF)], "10SEC FPS BUFF:%s", FpsStr);
 
-	wsprintf(String, "FrameCount:%d", Fps::count);
-	DrawString(0, 32, String, Cr);
+	wsprintf(SceneManager::DebugLog[static_cast<int>(E_Debug_Log_OverLay::FRAME_COUNT)], "FrameCount:%d", Fps::count);
 
-	GetScreenState(&x, &y, &bit);
-	gcd = std::gcd(x, y);
-	wsprintf(String, "Window Size:%d x %d (%d:%d)", x, y, x / gcd, y / gcd);
-	DrawString(0, 48, String, Cr);
+	GetScreenState(&_x, &_y, &bit);
+	gcd = std::gcd(_x, _y);
+	wsprintf(SceneManager::DebugLog[static_cast<int>(E_Debug_Log_OverLay::WINDOW_SIZE)], "Window Size:%d x %d (%d:%d)", _x, _y, _x / gcd, _y / gcd);
+
+	log_y = 0;
+	Cr = GetColor(0, 255, 0);
+	for (auto c : SceneManager::DebugLog) {
+		DrawString(5, log_y, c, Cr);
+		log_y += 16;
+	}
+
 }
 
 static int MakeStripeGraph(void) {
