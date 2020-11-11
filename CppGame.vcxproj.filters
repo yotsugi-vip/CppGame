@@ -19,6 +19,7 @@
     <ClCompile Include="Src\Input.cpp" />
     <ClCompile Include="Src\DataManager.cpp" />
     <ClCompile Include="Src\Component.cpp" />
+    <ClCompile Include="Src\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -36,6 +37,8 @@
     <ClInclude Include="Src\Input.h" />
     <ClInclude Include="Src\DataManager.h" />
     <ClInclude Include="Src\Component.h" />
+    <ClInclude Include="Src\Task.h" />
+    <ClInclude Include="Src\Player.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />

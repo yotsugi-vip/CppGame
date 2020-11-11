@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Player.cpp" />
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\DataManager.cpp" />
     <ClCompile Include="Src\Input.cpp" />
@@ -175,6 +176,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Player.h" />
     <ClInclude Include="Src\Component.h" />
     <ClInclude Include="Src\DataManager.h" />
     <ClInclude Include="Src\Input.h" />
@@ -190,6 +192,7 @@
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="Src\SceneTitle.h" />
     <ClInclude Include="Src\SceneBase.h" />
+    <ClInclude Include="Src\Task.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\back_pink.png" />

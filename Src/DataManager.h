@@ -8,6 +8,7 @@
 #include "SceneSelectMode.h"
 #include "SceneInit.h"
 #include "Fps.h"
+#include "Task.h"
 
 enum class Fonts {
 	Menu = 0,
@@ -39,6 +40,7 @@ class DataManager
 public:
 	static SceneBase* SceneTable[];
 	static EventBase* EventTable[];
+	static Task* TaskTable[];
 	static int FontTable[];
 	static int CaractorImg[static_cast<int>(Caractor::MAX)];
 
