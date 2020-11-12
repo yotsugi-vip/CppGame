@@ -46,6 +46,10 @@ void SceneMenu::Draw() {
 	}
 }
 
+void SceneMenu::Update() {
+
+}
+
 void SceneMenu::End() {
 }
 

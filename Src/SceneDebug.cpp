@@ -115,6 +115,8 @@ void SceneDebugInfo::Draw(void) {
 
 void SceneDebugInfo::End(){}
 
+void SceneDebugInfo::Update() {}
+
 void SceneDebugInfo::Initialize(){
     GetScreenState(&x, &y, &bit);
 }

@@ -34,6 +34,10 @@ void SceneTitle::Draw(void) {
     DrawStringToHandle((X - Width_PTS) / 2, Y / 2 + 20, "push to start", Cr, FontHandle_PushToStart);
 }
 
+void SceneTitle::Update(void) {
+
+}
+
 
 void SceneTitle::End(void) {
 

@@ -1,9 +1,14 @@
 #pragma once
 #include "SceneBase.h"
-class SceneInit : public SceneBase, public EventBase
+#include "Task.h"
+
+class SceneInit : public SceneBase, public EventBase, public Task
 {
 public:
 	void Draw();
+	void Update();
+
+public:
 	void End();
 	void Initialize();
 

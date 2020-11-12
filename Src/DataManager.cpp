@@ -26,7 +26,12 @@ EventBase* DataManager::EventTable[] = {
 };
 
 Task* DataManager::TaskTable[] = {
-	
+	&sceneInit,
+	&sceneTitle,
+	&sceneMenu,
+	&sceneSelectMode,
+	&sceneGame,
+	&sceneDebugInfo
 };
 
 int DataManager::FontTable[static_cast<int>(Fonts::MAX)] = { 0 };

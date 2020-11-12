@@ -39,8 +39,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         // “ü—Íî•ñæ“¾
         Input::Input_Main();
 
-        // •`‰æˆ—
-        SceneManager::Draw();
+        // ‘S‘Ìˆ—
+        SceneManager::GameProcess();
 
         // — ‰æ–Ê‚Ì“à—e‚ğ•\‰æ–Ê‚É”½‰f‚³‚¹‚é
         ScreenFlip();

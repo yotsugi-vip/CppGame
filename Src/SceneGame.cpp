@@ -25,8 +25,11 @@ void SceneGame::Draw() {
 
 	DrawBox(GAME_RANGE_START_X, GAME_RANGE_START_Y, GAME_RANGE_WIDTH, GAME_RANGE_HEIGHT, GetColor(0, 0, 0), true);
 
-	player.update();
-	player.draw();
+	player.Draw();
+}
+
+void SceneGame::Update() {
+	player.Update();
 }
 
 

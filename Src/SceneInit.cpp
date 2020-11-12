@@ -5,7 +5,11 @@
 void SceneInit::Initialize() {
 	DataManager::FontTable[static_cast<int>(Fonts::Menu)] = CreateFontToHandle("Menu", 15, 4);
 }
+
+
 void SceneInit::Draw() {}
+void SceneInit::Update(){}
+
 void SceneInit::End() {}
 
 void SceneInit::Event_Push_Button(E_Button_Type button){}

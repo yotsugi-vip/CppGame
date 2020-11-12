@@ -27,7 +27,7 @@ void SceneManager::Initialize() {
 }
 
 
-void SceneManager::Draw() {
+void SceneManager::GameProcess() {
 
 	// シーンの切り替え処理
 	if (SceneManager::NowScene != SceneManager::NextScene) {
@@ -39,7 +39,11 @@ void SceneManager::Draw() {
 		SceneManager::NowScene = SceneManager::NextScene;
 	}
 
-	DataManager::SceneTable[static_cast<int>(SceneManager::NextScene)]->Draw();
+	// 入力処理
+	DataManager::TaskTable[static_cast<int>(SceneManager::NextScene)]->Update();
+
+	// 描画処理
+	DataManager::TaskTable[static_cast<int>(SceneManager::NextScene)]->Draw();
 
 	// デバッグ情報を画面に上書き
 	if (SceneManager::ShowDebugInfo) {

@@ -20,7 +20,7 @@ Player::~Player() {
 
 }
 
-void Player::update() {
+void Player::Update() {
 
 	// ‘O‰ñî•ñ•ÛŠÇ
 	Player::Pre = Player::Now;
@@ -49,7 +49,7 @@ void Player::update() {
 	Player::HitBox.y = Player::Pre.y + 48;
 }
 
-void Player::draw() {
+void Player::Draw() {
 
 	int drawHandle = 0;
 	int frame = 0;

@@ -37,6 +37,10 @@ void SceneSelectMode::Draw() {
 	}
 }
 
+void SceneSelectMode::Update() {
+
+}
+
 void SceneSelectMode::End() {
 
 }

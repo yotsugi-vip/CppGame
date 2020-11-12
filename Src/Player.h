@@ -17,8 +17,8 @@ public:
 	int Frame;
 
 public:
-	void update();
-	void draw();
+	void Update();
+	void Draw();
 
 public:
 	void CheckPlayerCoordinate(T_Coordinate *info);

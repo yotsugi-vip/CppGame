@@ -47,6 +47,6 @@ public:
 
 public:
 	static void Initialize();
-	static void Draw();
+	static void GameProcess();
 	static void DebugInfoOverLay();
 };
