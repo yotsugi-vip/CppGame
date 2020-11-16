@@ -32,14 +32,53 @@ static Button button[5] = {
 	{  10, 110, 200, 130, Menu_5, false,  ChangeDebugMode	},
 };
 
-void SceneMenu::Initialize() {}
+static int Font[2];
+static int Id = 0;
+
+void SceneMenu::Initialize() {
+	Font[0] = CreateFontToHandle("0", 64, 4);
+	Font[1] = CreateFontToHandle("1", 72, 4, DX_FONTTYPE_EDGE, -1, 2);
+}
 
 void SceneMenu::Draw() {
 
 	// ”wŒi•`‰æ
 	DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
 
-	
+	if (Id == 4) {
+		DrawStringToHandle(980, 400, "Arcade", GetColor(100, 100, 100), Font[1], GetColor(255, 255, 255));
+	}
+	else {
+		DrawStringToHandle(1010, 400, "Arcade", GetColor(100, 100, 100), Font[0], GetColor(255, 255, 255));
+	}
+	if (Id == 3) {
+		DrawStringToHandle(960, 500, "Practice", GetColor(100, 100, 100), Font[1], GetColor(255, 255, 255));
+	}
+	else {
+		DrawStringToHandle(990, 500, "Practice", GetColor(100, 100, 100), Font[0], GetColor(255, 255, 255));
+	}
+
+	if (Id == 2) {
+		DrawStringToHandle(940, 600, "Option", GetColor(100, 100, 100), Font[1], GetColor(255, 255, 255));
+	}
+	else {
+		DrawStringToHandle(970, 600, "Option", GetColor(100, 100, 100), Font[0], GetColor(255, 255, 255));
+	}
+
+	if (Id == 1) {
+		DrawStringToHandle(920, 700, "Credit", GetColor(100, 100, 100), Font[1], GetColor(255, 255, 255));
+	}
+	else {
+		DrawStringToHandle(950, 700, "Credit", GetColor(100, 100, 100), Font[0], GetColor(255, 255, 255));
+	}
+
+	if(Id == 0){
+		DrawStringToHandle(900, 800, "Exit", GetColor(100, 100, 100), Font[1], GetColor(255, 255, 255));
+	}
+	else {
+		DrawStringToHandle(930, 800, "Exit", GetColor(100, 100, 100), Font[0], GetColor(255, 255, 255));
+	}
+
 	// ƒ{ƒ^ƒ“•`‰æ
 	for (auto b : button) {
 		b.Draw();
@@ -47,7 +86,21 @@ void SceneMenu::Draw() {
 }
 
 void SceneMenu::Update() {
-
+	if (Input::now.Up == static_cast<int>(E_Button_State::Button_On)) {
+		if (Input::pre.Up == static_cast<int>(E_Button_State::Button_Off)) {
+			Id++;
+			if (Id > 4) {
+				Id = 0;
+			}
+		}
+	} else if (Input::now.Down == static_cast<int>(E_Button_State::Button_On)) {
+		if (Input::pre.Down == static_cast<int>(E_Button_State::Button_Off)) {
+			Id--;
+			if (Id < 0) {
+				Id = 4;
+			}
+		}
+	}
 }
 
 void SceneMenu::End() {
