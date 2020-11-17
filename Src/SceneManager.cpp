@@ -7,9 +7,9 @@
 static int MakeBackScreenCream(void);
 static int MakeStripeGraph(void);
 
-E_Scene SceneManager::NowScene = E_Scene::Scene_Initialize;
-E_Scene SceneManager::NextScene = E_Scene::Scene_Title;
-E_Scene SceneManager::PreScene = E_Scene::Scene_Initialize;
+E_Scene SceneManager::NowScene = E_Scene::Initialize;
+E_Scene SceneManager::NextScene = E_Scene::Title;
+E_Scene SceneManager::PreScene = E_Scene::Initialize;
 
 int SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_MAX)] = { 0 };
 char SceneManager::DebugLog[][64] = { 0 };
@@ -19,7 +19,7 @@ bool SceneManager::QuitGame = false;
 
 void SceneManager::Initialize() {
 	// 初期化処理を行う
-	DataManager::SceneTable[static_cast<int>(E_Scene::Scene_Initialize)]->Initialize();
+	DataManager::SceneTable[static_cast<int>(E_Scene::Initialize)]->Initialize();
 	
 	// 共通で使用するグラフィックデータの作成
 	SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Stripe)] = MakeStripeGraph();
@@ -39,16 +39,23 @@ void SceneManager::GameProcess() {
 		SceneManager::NowScene = SceneManager::NextScene;
 	}
 
+
 	// 入力処理
-	DataManager::TaskTable[static_cast<int>(SceneManager::NextScene)]->Update();
+	DataManager::TaskTable[static_cast<int>(SceneManager::NowScene)]->Update();
+
+	// 描画初期化
+	ClearDrawScreen();
 
 	// 描画処理
-	DataManager::TaskTable[static_cast<int>(SceneManager::NextScene)]->Draw();
+	DataManager::TaskTable[static_cast<int>(SceneManager::NowScene)]->Draw();
 
 	// デバッグ情報を画面に上書き
 	if (SceneManager::ShowDebugInfo) {
 		SceneManager::DebugInfoOverLay();
 	}
+
+	// 裏画面の内容を表画面に反映させる
+	ScreenFlip();
 }
 
 void SceneManager::DebugInfoOverLay() {
@@ -114,7 +121,6 @@ static int MakeStripeGraph(void) {
 static int MakeBackScreenCream(void) {
 	int gh;
 	int x, y, bit;
-	int cr_pink = GetColor(255, 200, 255);
 	int cr_cream = GetColor(255, 255, 200);
 
 	GetScreenState(&x, &y, &bit);

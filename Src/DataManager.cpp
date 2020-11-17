@@ -6,10 +6,12 @@ SceneMenu DataManager::sceneMenu;
 SceneDebugInfo DataManager::sceneDebugInfo;
 SceneGame DataManager::sceneGame;
 SceneSelectMode DataManager::sceneSelectMode;
+TransTitleToMenu DataManager::transTitleToMenu;
 
 SceneBase* DataManager::SceneTable[] = {
 	&sceneInit,
 	&sceneTitle,
+	&transTitleToMenu,
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,
@@ -19,6 +21,7 @@ SceneBase* DataManager::SceneTable[] = {
 EventBase* DataManager::EventTable[] = {
 	&sceneInit,
 	&sceneTitle,
+	&transTitleToMenu,
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,
@@ -28,6 +31,7 @@ EventBase* DataManager::EventTable[] = {
 Task* DataManager::TaskTable[] = {
 	&sceneInit,
 	&sceneTitle,
+	&transTitleToMenu,
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,

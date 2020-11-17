@@ -5,6 +5,7 @@
 #include "SceneBase.h"
 #include "SceneMenu.h"
 #include "SceneGame.h"
+#include "TransTitleToMenu.h"
 #include "SceneSelectMode.h"
 #include "SceneInit.h"
 #include "Fps.h"
@@ -51,4 +52,5 @@ public:
 	static SceneDebugInfo sceneDebugInfo;
 	static SceneGame sceneGame;
 	static SceneSelectMode sceneSelectMode;
+	static TransTitleToMenu transTitleToMenu;
 };

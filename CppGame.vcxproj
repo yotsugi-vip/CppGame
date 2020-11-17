@@ -170,6 +170,7 @@
     <ClCompile Include="Src\Fps.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\SceneTitle.cpp" />
+    <ClCompile Include="Src\TransTitleToMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Memo.md" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Src\SceneTitle.h" />
     <ClInclude Include="Src\SceneBase.h" />
     <ClInclude Include="Src\Task.h" />
+    <ClInclude Include="Src\TransTitleToMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\back_pink.png" />

@@ -19,12 +19,13 @@ enum class E_Debug_Log_OverLay {
 };
 
 enum class E_Scene {
-	Scene_Initialize = 0,
-	Scene_Title,
-	Scene_Menu,
-	Scene_Select_Mode,
-	Scene_Game,
-	Scene_Debug
+	Initialize = 0,
+	Title,
+	Trans_Titile_To_Menu,
+	Menu,
+	Select_Mode,
+	Game,
+	Debug
 };
 
 enum class E_Common_GraphHandle {

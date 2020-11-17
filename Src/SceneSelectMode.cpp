@@ -131,5 +131,5 @@ void SceneSelectMode::Event_Keep_Button(E_Button_Type buttonType, E_Button_State
 void dummy(){}
 
 void ChangeGameMode() {
-	SceneManager::NextScene = E_Scene::Scene_Game;
+	SceneManager::NextScene = E_Scene::Game;
 }

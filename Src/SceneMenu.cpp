@@ -27,9 +27,9 @@ typedef struct {
 	int y;
 	const char* string;
 	void (* function)();
-}T_MENU_BUTTON;
+}T_MENU_BUTTON_M;
 
-T_MENU_BUTTON MenuButton[5] = {
+T_MENU_BUTTON_M MenuButton[5] = {
 	{980,	400,	Menu_1,	ChangeGameMode},
 	{950,	500,	Menu_2,	dummy},
 	{920,	600,	Menu_3,	dummy},
@@ -47,33 +47,33 @@ void SceneMenu::Initialize() {
 	Font[1] = CreateFontToHandle("1", 72, 4, DX_FONTTYPE_EDGE, -1, 2);
 }
 
-// transition title to Menu を作り、移行アニメーションを描画
 void SceneMenu::Draw() {
+
+	// ボタン描画
+	int i = 0;
+	int x = 0;
+	int y = 0;
+	int f = Font[0];
+	unsigned int C1 = GetColor(100, 100, 100);
+	unsigned int C2 = GetColor(255, 255, 255);
 
 	// 背景描画
 	DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
 
-	// ボタン描画
-	{
-		int i = 0;
-		int x, y, f;
-		int C1 = GetColor(100, 100, 100);
-		int C2 = GetColor(255, 255, 255);
-		for (auto b : MenuButton) {
-			x = b.x;
-			y = b.y;
-
-			if (Id == (4-i)) {
-				f = Font[1];
-				b.x += 30;
-			}
-			else {
-				f = Font[0];
-			}
-
-			DrawStringToHandle(x, y, b.string, C1, f, C2);
-			i++;
+	for (const auto& b : MenuButton) {
+		y = b.y;
+		x = b.x;
+	
+		if (Id == (4 - i)) {
+			f = Font[1];
+			x -= 15;
 		}
+		else {
+			f = Font[0];
+		}
+	
+		DrawStringToHandle(x, y, b.string, C1, f, C2);
+		i++;
 	}
 }
 
@@ -133,11 +133,11 @@ void SceneMenu::End() {
 }
 
 void ChangeDebugMode() {
-	SceneManager::NextScene = E_Scene::Scene_Debug;
+	SceneManager::NextScene = E_Scene::Debug;
 }
 
 void ChangeGameMode() {
-	SceneManager::NextScene = E_Scene::Scene_Select_Mode;
+	SceneManager::NextScene = E_Scene::Select_Mode;
 }
 
 void ExitGame() {

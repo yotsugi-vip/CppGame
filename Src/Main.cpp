@@ -33,17 +33,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             break;    // エラーが発生したらループを抜ける
         }
 
-        // 描画初期化
-        ClearDrawScreen();
-
         // 入力情報取得
         Input::Input_Main();
 
         // 全体処理
         SceneManager::GameProcess();
-
-        // 裏画面の内容を表画面に反映させる
-        ScreenFlip();
 
         // FPS計算、待機
         Fps::Wait();
