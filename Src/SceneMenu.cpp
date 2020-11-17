@@ -1,15 +1,12 @@
 #include "SceneMenu.h"
 #include "SceneManager.h"
 #include "Pad.h"
-#include <DxLib.h>
+#include "Sound.h"
 #include "Input.h"
 #include "Component.h"
+#include "DataManager.h"
+#include <DxLib.h>
 
-static const char* Menu_1 = "Arcade";
-static const char* Menu_2 = "Practice";
-static const char* Menu_3 = "Config";
-static const char* Menu_4 = "Exit";
-static const char* Menu_5 = "Debug Mode";
 
 // ‚»‚Ì‚¤‚¿Input‚ÉˆÚ‚·
 bool CheckPush(E_Button_Type button);
@@ -19,8 +16,6 @@ static void ChangeDebugMode();
 static void ChangeGameMode();
 static void ExitGame();
 static void dummy();
-
-static unsigned int InputBuff[3] = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 
 typedef struct {
 	int x;
@@ -34,18 +29,14 @@ T_MENU_BUTTON_M MenuButton[5] = {
 	{950,	500,	Menu_2,	dummy},
 	{920,	600,	Menu_3,	dummy},
 	{890,	700,	Menu_4,	ExitGame},
-	{860,	800,	Menu_5,	dummy},
+	{860,	800,	Menu_5,	ChangeDebugMode},
 };
 
-static int Font[2];
 static int Id = -1;
 static int FrameCnt = 0;
 static int FrameWaitCnt = 0;
 
-void SceneMenu::Initialize() {
-	Font[0] = CreateFontToHandle("0", 64, 4);
-	Font[1] = CreateFontToHandle("1", 72, 4, DX_FONTTYPE_EDGE, -1, 2);
-}
+void SceneMenu::Initialize() { }
 
 void SceneMenu::Draw() {
 
@@ -53,7 +44,7 @@ void SceneMenu::Draw() {
 	int i = 0;
 	int x = 0;
 	int y = 0;
-	int f = Font[0];
+	int f = DataManager::FontTable[static_cast<int>(Fonts::Menu)];
 	unsigned int C1 = GetColor(100, 100, 100);
 	unsigned int C2 = GetColor(255, 255, 255);
 
@@ -65,11 +56,11 @@ void SceneMenu::Draw() {
 		x = b.x;
 	
 		if (Id == (4 - i)) {
-			f = Font[1];
+			f = DataManager::FontTable[static_cast<int>(Fonts::Menu_Selected)];
 			x -= 15;
 		}
 		else {
-			f = Font[0];
+			f = DataManager::FontTable[static_cast<int>(Fonts::Menu)];
 		}
 	
 		DrawStringToHandle(x, y, b.string, C1, f, C2);
@@ -83,6 +74,7 @@ void SceneMenu::Update() {
 		FrameCnt = 0;
 		FrameWaitCnt = 0;
 		Id++;
+		Sound::SE_SelectMenu();
 		if (Id > 4) {
 			Id = 0;
 		}
@@ -94,6 +86,7 @@ void SceneMenu::Update() {
 		if (FrameWaitCnt > 20 && FrameCnt > 5) {
 			Id++;
 			FrameCnt = 0;
+			Sound::SE_SelectMenu();
 			if (Id > 4) {
 				Id = 0;
 			}
@@ -104,6 +97,7 @@ void SceneMenu::Update() {
 		FrameCnt = 0;
 		FrameWaitCnt = 0;
 		Id--;
+		Sound::SE_SelectMenu();
 		if (Id < 0) {
 			Id = 4;
 		}
@@ -115,6 +109,7 @@ void SceneMenu::Update() {
 		if (FrameWaitCnt > 20 && FrameCnt > 5) {
 			Id--;
 			FrameCnt = 0;
+			Sound::SE_SelectMenu();
 			if (Id < 0) {
 				Id = 4;
 			}
@@ -123,6 +118,7 @@ void SceneMenu::Update() {
 
 	if (CheckPush(E_Button_Type::Circle)) {
 		if (Id >= 0 && Id < 5) {
+			Sound::SE_ConfirmMenu();
 			MenuButton[(4 - Id)].function();
 		}
 	}

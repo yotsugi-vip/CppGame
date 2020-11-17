@@ -11,8 +11,16 @@
 #include "Fps.h"
 #include "Task.h"
 
+static const char* Menu_1 = "Arcade";
+static const char* Menu_2 = "Practice";
+static const char* Menu_3 = "Config";
+static const char* Menu_4 = "Exit";
+static const char* Menu_5 = "Debug Mode";
+
+
 enum class Fonts {
 	Menu = 0,
+	Menu_Selected,
 	MAX
 };
 
@@ -36,14 +44,27 @@ enum class Caractor {
 	MAX
 };
 
+enum class Sound_SE {
+	Select = 0,
+	Confirm,
+	MAX
+};
+
+enum class Sound_Music {
+	Title = 0,
+	MAX
+};
+
 class DataManager
 {
 public:
 	static SceneBase* SceneTable[];
 	static EventBase* EventTable[];
 	static Task* TaskTable[];
-	static int FontTable[];
+	static int FontTable[static_cast<int>(Fonts::MAX)];
 	static int CaractorImg[static_cast<int>(Caractor::MAX)];
+	static int SoundSE[static_cast<int>(Sound_SE::MAX)];
+	static int SoundMusic[static_cast<int>(Sound_Music::MAX)];
 
 public:
 	static SceneInit sceneInit;

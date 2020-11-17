@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Sound.cpp" />
     <ClCompile Include="Src\Player.cpp" />
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\DataManager.cpp" />
@@ -173,10 +174,14 @@
     <ClCompile Include="Src\TransTitleToMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="asset\bgm_maoudamashii_8bit24.ogg" />
+    <None Include="asset\se_maoudamashii_system21.ogg" />
+    <None Include="asset\se_maoudamashii_system48.ogg" />
     <None Include="Memo.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Sound.h" />
     <ClInclude Include="Src\Player.h" />
     <ClInclude Include="Src\Component.h" />
     <ClInclude Include="Src\DataManager.h" />

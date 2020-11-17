@@ -1,6 +1,7 @@
 #include "SceneTitle.h"
 #include "SceneManager.h"
 #include "Pad.h"
+#include "Sound.h"
 #include <DxLib.h>
 
 static const char* TitleWord = "T H I S   I S   T I T L E";
@@ -18,6 +19,9 @@ void SceneTitle::Initialize(void) {
 
         Width_TITLE = GetDrawStringWidthToHandle(TitleWord, strlen(TitleWord), FontHandle_Title);
         Width_PTS = GetDrawStringWidthToHandle(PushToStartWord, strlen(PushToStartWord), FontHandle_PushToStart);
+
+        Sound::SetBgmRatio(50);
+        Sound::BGM_Title();
 }
 
 void SceneTitle::Draw(void) {

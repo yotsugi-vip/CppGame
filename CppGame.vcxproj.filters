@@ -3,6 +3,9 @@
   <ItemGroup>
     <None Include="README.md" />
     <None Include="Memo.md" />
+    <None Include="asset\bgm_maoudamashii_8bit24.ogg" />
+    <None Include="asset\se_maoudamashii_system21.ogg" />
+    <None Include="asset\se_maoudamashii_system48.ogg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp" />
@@ -21,6 +24,7 @@
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\Player.cpp" />
     <ClCompile Include="Src\TransTitleToMenu.cpp" />
+    <ClCompile Include="Src\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -41,6 +45,7 @@
     <ClInclude Include="Src\Task.h" />
     <ClInclude Include="Src\Player.h" />
     <ClInclude Include="Src\TransTitleToMenu.h" />
+    <ClInclude Include="Src\Sound.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />

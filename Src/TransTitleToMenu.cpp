@@ -1,12 +1,7 @@
 #include "TransTitleToMenu.h"
 #include <DxLib.h>
 #include "SceneManager.h"
-
-static const char* Menu_1 = "Arcade";
-static const char* Menu_2 = "Practice";
-static const char* Menu_3 = "Config";
-static const char* Menu_4 = "Exit";
-static const char* Menu_5 = "Debug Mode";
+#include "DataManager.h"
 
 typedef struct {
 	int x;
@@ -33,12 +28,11 @@ void TransTitleToMenu::Update() {
 	}
 }
 
-
 void TransTitleToMenu::Draw() {
 
 	int C1 = GetColor(100, 100, 100);
 	int C2 = GetColor(255, 255, 255);
-	int f = CreateFontToHandle("00", 64, 4);
+	int f = DataManager::FontTable[static_cast<int>(Fonts::Menu)];
 	int cr_cream = GetColor(255, 255, 200);
 
 	SetDrawBlendMode(DX_BLENDGRAPHTYPE_NORMAL, 0);
@@ -66,7 +60,6 @@ void TransTitleToMenu::Initialize() {}
 
 void TransTitleToMenu::End() {
 	SetDrawBlendMode(DX_BLENDGRAPHTYPE_NORMAL, 0);
-	DeleteFontToHandle(f);
 }
 
 void TransTitleToMenu::Event_Push_Button(E_Button_Type button) {	
