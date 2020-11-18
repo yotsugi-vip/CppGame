@@ -17,19 +17,12 @@ static void ChangeGameMode();
 static void ExitGame();
 static void dummy();
 
-typedef struct {
-	int x;
-	int y;
-	const char* string;
-	void (* function)();
-}T_MENU_BUTTON_M;
-
-T_MENU_BUTTON_M MenuButton[5] = {
-	{980,	400,	Menu_1,	ChangeGameMode},
-	{950,	500,	Menu_2,	dummy},
-	{920,	600,	Menu_3,	dummy},
-	{890,	700,	Menu_4,	ExitGame},
-	{860,	800,	Menu_5,	ChangeDebugMode},
+T_MENU_BUTTON MenuButton[5] = {
+	{BUTTON_X_0,	BUTTON_Y_0,	Menu_1,	ChangeGameMode	},
+	{BUTTON_X_1,	BUTTON_Y_1,	Menu_2,	dummy			},
+	{BUTTON_X_2,	BUTTON_Y_2,	Menu_3,	dummy			},
+	{BUTTON_X_3,	BUTTON_Y_3,	Menu_4,	ExitGame		},
+	{BUTTON_X_4,	BUTTON_Y_4,	Menu_5,	ChangeDebugMode	},
 };
 
 static int Id = -1;
@@ -50,6 +43,10 @@ void SceneMenu::Draw() {
 
 	// ”wŒi•`‰æ
 	DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
+
+	// ƒ^ƒCƒgƒ‹•`‰æ
+	DrawGraph(TITLE_MENU_X, TITLE_MENU_Y, DataManager::GraphTable[static_cast<int>(Graph::Title)], true);
+
 
 	for (const auto& b : MenuButton) {
 		y = b.y;
@@ -123,6 +120,11 @@ void SceneMenu::Update() {
 		}
 	}
 
+	if (CheckPush(E_Button_Type::Cross)) {
+		Sound::SE_Cancel();
+		SceneManager::NextScene = E_Scene::Title;
+	}
+
 }
 
 void SceneMenu::End() {
@@ -140,7 +142,7 @@ void ExitGame() {
 	SceneManager::QuitGame = true;
 }
 
-void dummy() {}
+void dummy() { }
 
 void SceneMenu::Event_Push_Button(E_Button_Type buttonType) {}
 
@@ -156,6 +158,13 @@ bool CheckPush(E_Button_Type button) {
 	case E_Button_Type::Circle:
 		if (Input::pre.Circle == static_cast<int>(E_Button_State::Button_Off) &&
 			Input::now.Circle == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+
+	case E_Button_Type::Cross:
+		if (Input::pre.Cross == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Cross == static_cast<int>(E_Button_State::Button_On)) {
 			ret = true;
 		}
 		break;

@@ -176,6 +176,7 @@
   <ItemGroup>
     <None Include="asset\bgm_maoudamashii_8bit24.ogg" />
     <None Include="asset\se_maoudamashii_system21.ogg" />
+    <None Include="asset\se_maoudamashii_system45.ogg" />
     <None Include="asset\se_maoudamashii_system48.ogg" />
     <None Include="Memo.md" />
     <None Include="README.md" />
@@ -205,6 +206,7 @@
     <Image Include="asset\back_pink.png" />
     <Image Include="asset\joji_shadow.png" />
     <Image Include="asset\p.png" />
+    <Image Include="asset\Title.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

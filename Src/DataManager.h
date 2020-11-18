@@ -44,9 +44,15 @@ enum class Caractor {
 	MAX
 };
 
+enum class Graph {
+	Title = 0,
+	MAX
+};
+
 enum class Sound_SE {
 	Select = 0,
 	Confirm,
+	Cancel,
 	MAX
 };
 
@@ -63,6 +69,7 @@ public:
 	static Task* TaskTable[];
 	static int FontTable[static_cast<int>(Fonts::MAX)];
 	static int CaractorImg[static_cast<int>(Caractor::MAX)];
+	static int GraphTable[static_cast<int>(Graph::MAX)];
 	static int SoundSE[static_cast<int>(Sound_SE::MAX)];
 	static int SoundMusic[static_cast<int>(Sound_Music::MAX)];
 

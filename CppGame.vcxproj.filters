@@ -6,6 +6,7 @@
     <None Include="asset\bgm_maoudamashii_8bit24.ogg" />
     <None Include="asset\se_maoudamashii_system21.ogg" />
     <None Include="asset\se_maoudamashii_system48.ogg" />
+    <None Include="asset\se_maoudamashii_system45.ogg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp" />
@@ -51,5 +52,6 @@
     <Image Include="asset\joji_shadow.png" />
     <Image Include="asset\back_pink.png" />
     <Image Include="asset\p.png" />
+    <Image Include="asset\Title.png" />
   </ItemGroup>
 </Project>

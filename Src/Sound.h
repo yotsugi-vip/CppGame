@@ -7,8 +7,10 @@ class Sound
 {
 public:
 	static int SE_Ratio;
+	static void SetSeRatio(int ratio);
 	static void SE_SelectMenu();
 	static void SE_ConfirmMenu();
+	static void SE_Cancel();
 
 public:
 	static int BGM_Ratio;
