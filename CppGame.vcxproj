@@ -205,6 +205,7 @@
   <ItemGroup>
     <Image Include="asset\back_pink.png" />
     <Image Include="asset\joji_shadow.png" />
+    <Image Include="asset\MENU.png" />
     <Image Include="asset\p.png" />
     <Image Include="asset\Title.png" />
   </ItemGroup>

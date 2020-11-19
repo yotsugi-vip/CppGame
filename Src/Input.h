@@ -27,4 +27,9 @@ public:
 	static void Event_Push_Button(E_Button_Type button);
 	static void Event_Release_Button(E_Button_Type button);
 	static void Event_Keep_Button(E_Button_Type button, E_Button_State onoff);
+
+public:
+	static bool CheckPush(E_Button_Type button);
+	static bool CheckRelease(E_Button_Type button);
+	static bool CheckKeep(E_Button_Type button, E_Button_State state);
 };

@@ -123,3 +123,68 @@ void Input::Event_Release_Button(E_Button_Type button) {
 void Input::Event_Keep_Button(E_Button_Type button, E_Button_State onoff) {
 	DataManager::EventTable[static_cast<int>(SceneManager::NextScene)]->Event_Keep_Button(button, onoff);
 }
+
+bool Input::CheckPush(E_Button_Type button) {
+
+	bool ret = false;
+
+	switch (button) {
+	case E_Button_Type::Circle:
+		if (Input::pre.Circle == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Circle == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+
+	case E_Button_Type::Cross:
+		if (Input::pre.Cross == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Cross == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Up:
+		if (Input::pre.Up == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Up == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Down:
+		if (Input::pre.Down == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Down == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+	}
+	return ret;
+}
+
+bool Input::CheckRelease(E_Button_Type button) {
+	return false;
+}
+
+bool Input::CheckKeep(E_Button_Type button, E_Button_State state) {
+
+	bool ret = false;
+
+	switch (button) {
+	case E_Button_Type::Circle:
+		if (Input::pre.Circle == static_cast<int>(state) &&
+			Input::now.Circle == static_cast<int>(state)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Up:
+		if (Input::pre.Up == static_cast<int>(state) &&
+			Input::now.Up == static_cast<int>(state)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Down:
+		if (Input::pre.Down == static_cast<int>(state) &&
+			Input::now.Down == static_cast<int>(state)) {
+			ret = true;
+		}
+		break;
+	}
+	return ret;
+}

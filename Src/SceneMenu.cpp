@@ -67,7 +67,7 @@ void SceneMenu::Draw() {
 
 void SceneMenu::Update() {
 
-	if (CheckPush(E_Button_Type::Up)) {
+	if (Input::CheckPush(E_Button_Type::Up)) {
 		FrameCnt = 0;
 		FrameWaitCnt = 0;
 		Id++;
@@ -77,7 +77,7 @@ void SceneMenu::Update() {
 		}
 	}
 
-	if (CheckKeep(E_Button_Type::Up, E_Button_State::Button_On)) {
+	if (Input::CheckKeep(E_Button_Type::Up, E_Button_State::Button_On)) {
 		FrameWaitCnt++;
 		FrameCnt++;
 		if (FrameWaitCnt > 20 && FrameCnt > 5) {
@@ -90,7 +90,7 @@ void SceneMenu::Update() {
 		}
 	}
 
-	if (CheckPush(E_Button_Type::Down)) {
+	if (Input::CheckPush(E_Button_Type::Down)) {
 		FrameCnt = 0;
 		FrameWaitCnt = 0;
 		Id--;
@@ -100,7 +100,7 @@ void SceneMenu::Update() {
 		}
 	}
 
-	if (CheckKeep(E_Button_Type::Down, E_Button_State::Button_On)) {
+	if (Input::CheckKeep(E_Button_Type::Down, E_Button_State::Button_On)) {
 		FrameWaitCnt++;
 		FrameCnt++;
 		if (FrameWaitCnt > 20 && FrameCnt > 5) {
@@ -113,14 +113,14 @@ void SceneMenu::Update() {
 		}
 	}
 
-	if (CheckPush(E_Button_Type::Circle)) {
+	if (Input::CheckPush(E_Button_Type::Circle)) {
 		if (Id >= 0 && Id < 5) {
 			Sound::SE_ConfirmMenu();
 			MenuButton[(4 - Id)].function();
 		}
 	}
 
-	if (CheckPush(E_Button_Type::Cross)) {
+	if (Input::CheckPush(E_Button_Type::Cross)) {
 		Sound::SE_Cancel();
 		SceneManager::NextScene = E_Scene::Title;
 	}
@@ -149,68 +149,3 @@ void SceneMenu::Event_Push_Button(E_Button_Type buttonType) {}
 void SceneMenu::Event_Release_Button(E_Button_Type button) {}
 
 void SceneMenu::Event_Keep_Button(E_Button_Type buttonType, E_Button_State onoff) {}
-
-bool CheckPush(E_Button_Type button) {
-
-	bool ret = false;
-
-	switch (button) {
-	case E_Button_Type::Circle:
-		if (Input::pre.Circle == static_cast<int>(E_Button_State::Button_Off) &&
-			Input::now.Circle == static_cast<int>(E_Button_State::Button_On)) {
-			ret = true;
-		}
-		break;
-
-	case E_Button_Type::Cross:
-		if (Input::pre.Cross == static_cast<int>(E_Button_State::Button_Off) &&
-			Input::now.Cross == static_cast<int>(E_Button_State::Button_On)) {
-			ret = true;
-		}
-		break;
-	case E_Button_Type::Up:
-		if (Input::pre.Up == static_cast<int>(E_Button_State::Button_Off) &&
-			Input::now.Up == static_cast<int>(E_Button_State::Button_On)) {
-			ret = true;
-		}
-		break;
-	case E_Button_Type::Down:
-		if (Input::pre.Down == static_cast<int>(E_Button_State::Button_Off) &&
-			Input::now.Down == static_cast<int>(E_Button_State::Button_On)) {
-			ret = true;
-		}
-		break;
-	}
-	return ret;
-}
-
-void CheckRelease() {
-
-}
-
-bool CheckKeep(E_Button_Type button, E_Button_State state) {
-
-	bool ret = false;
-
-	switch (button) {
-	case E_Button_Type::Circle:
-		if (Input::pre.Circle == static_cast<int>(state) &&
-			Input::now.Circle == static_cast<int>(state)) {
-			ret = true;
-		}
-		break;
-	case E_Button_Type::Up:
-		if (Input::pre.Up == static_cast<int>(state) &&
-			Input::now.Up == static_cast<int>(state)) {
-			ret = true;
-		}
-		break;
-	case E_Button_Type::Down:
-		if (Input::pre.Down == static_cast<int>(state) &&
-			Input::now.Down == static_cast<int>(state)) {
-			ret = true;
-		}
-		break;
-	}
-	return ret;
-}
