@@ -1,6 +1,10 @@
 #pragma once
+#include "DataManager.h"
+
 class Component
 {
+public:
+	static void DrawTextBox(int x, int y, int x2, int y2, TextBox_Color color);
 };
 
 
@@ -14,4 +18,6 @@ public:
 	bool isSelected;
 	void (*func)();
 	void Draw();
+
+public:
 };

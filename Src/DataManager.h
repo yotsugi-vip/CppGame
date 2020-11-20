@@ -46,6 +46,9 @@ enum class Caractor {
 
 enum class Graph {
 	Title = 0,
+	Mode_Easy,
+	Mode_Normal,
+	Mode_Hard,
 	MAX
 };
 
@@ -61,6 +64,26 @@ enum class Sound_Music {
 	MAX
 };
 
+enum class TextBox_Sprite {
+	UP_LEFT = 0,
+	UP_CENTER,
+	UP_RIGHT,
+	MIDDLE_LEFT,
+	MIDDLE_CENTER,
+	MIDDLE_RIGHT,
+	DOWN_LEFT,
+	DOWN_CENTER,
+	DOWN_RIGHT,
+	MAX
+};
+
+enum class TextBox_Color {
+	BLACK = 0,
+	GRAY,
+	PINK,
+	MAX
+};
+
 class DataManager
 {
 public:
@@ -72,6 +95,7 @@ public:
 	static int GraphTable[static_cast<int>(Graph::MAX)];
 	static int SoundSE[static_cast<int>(Sound_SE::MAX)];
 	static int SoundMusic[static_cast<int>(Sound_Music::MAX)];
+	static int TextBoxSprite[static_cast<int>(TextBox_Color::MAX)][static_cast<int>(TextBox_Sprite::MAX)];
 
 public:
 	static SceneInit sceneInit;

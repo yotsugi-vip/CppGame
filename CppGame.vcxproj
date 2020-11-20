@@ -203,6 +203,9 @@
     <ClInclude Include="Src\TransTitleToMenu.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="asset\9Splite_black.png" />
+    <Image Include="asset\9Splite_gray.png" />
+    <Image Include="asset\9Splite_pink.png" />
     <Image Include="asset\back_pink.png" />
     <Image Include="asset\joji_shadow.png" />
     <Image Include="asset\MENU.png" />

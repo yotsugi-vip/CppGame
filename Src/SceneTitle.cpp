@@ -5,11 +5,12 @@
 #include "DataManager.h"
 #include <DxLib.h>
 
+#include "Component.h"
+
 static const char* PushToStartWord = "push to start";
 
 static int FontHandle_PushToStart = -1;
 static int Width_PTS = -1;
-
 
 void SceneTitle::Initialize(void) {
         FontHandle_PushToStart = CreateFontToHandle("PUSH_TO_START", 20, 6);
@@ -52,4 +53,5 @@ void SceneTitle::Event_Push_Button(E_Button_Type button) {
 }
 
 void SceneTitle::Event_Release_Button(E_Button_Type button){}
+
 void SceneTitle::Event_Keep_Button(E_Button_Type button, E_Button_State onoff){}

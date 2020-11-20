@@ -54,5 +54,8 @@
     <Image Include="asset\p.png" />
     <Image Include="asset\Title.png" />
     <Image Include="asset\MENU.png" />
+    <Image Include="asset\9Splite_black.png" />
+    <Image Include="asset\9Splite_gray.png" />
+    <Image Include="asset\9Splite_pink.png" />
   </ItemGroup>
 </Project>
