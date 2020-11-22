@@ -154,6 +154,18 @@ bool Input::CheckPush(E_Button_Type button) {
 			ret = true;
 		}
 		break;
+	case E_Button_Type::Right:
+		if (Input::pre.Right == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Right == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Left:
+		if (Input::pre.Left == static_cast<int>(E_Button_State::Button_Off) &&
+			Input::now.Left == static_cast<int>(E_Button_State::Button_On)) {
+			ret = true;
+		}
+		break;
 	}
 	return ret;
 }
@@ -182,6 +194,18 @@ bool Input::CheckKeep(E_Button_Type button, E_Button_State state) {
 	case E_Button_Type::Down:
 		if (Input::pre.Down == static_cast<int>(state) &&
 			Input::now.Down == static_cast<int>(state)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Left:
+		if (Input::pre.Left == static_cast<int>(state) &&
+			Input::now.Left == static_cast<int>(state)) {
+			ret = true;
+		}
+		break;
+	case E_Button_Type::Right:
+		if (Input::pre.Right == static_cast<int>(state) &&
+			Input::now.Right == static_cast<int>(state)) {
 			ret = true;
 		}
 		break;

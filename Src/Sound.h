@@ -1,6 +1,6 @@
 #pragma once
 
-constexpr int SOUND_RATIO_MAX = 255;
+constexpr int SOUND_RATIO_MAX = 100;
 constexpr int SOUND_RATIO_MIN = 0;
 
 class Sound

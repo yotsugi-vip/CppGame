@@ -18,6 +18,7 @@ void SceneTitle::Initialize(void) {
         Width_PTS = GetDrawStringWidthToHandle(PushToStartWord, strlen(PushToStartWord), FontHandle_PushToStart);
 
         Sound::SetBgmRatio(50);
+        Sound::SetSeRatio(50);
         Sound::BGM_Title();
 }
 

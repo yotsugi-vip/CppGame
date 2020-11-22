@@ -2,8 +2,8 @@
 #include "DataManager.h"
 #include <DxLib.h>
 
-int	Sound::BGM_Ratio = 255;
-int Sound::SE_Ratio = 255;
+int	Sound::BGM_Ratio = 100;
+int Sound::SE_Ratio = 100;
 
 void Sound::SE_SelectMenu() {
 	PlaySoundMem(DataManager::SoundSE[static_cast<int>(Sound_SE::Select)], DX_PLAYTYPE_BACK);
@@ -24,23 +24,27 @@ void Sound::BGM_Title() {
 }
 
 void Sound::SetBgmRatio(int ratio) {
-	if (SOUND_RATIO_MIN >= 0 && ratio < SOUND_RATIO_MAX) {
+	double val;
+
+	if (ratio >= SOUND_RATIO_MIN && ratio <= SOUND_RATIO_MAX) {
+		Sound::BGM_Ratio = ratio;
+		val = (double)ratio * 255 / 100;
+
 		for (const auto& m : DataManager::SoundMusic) {
-			ChangeVolumeSoundMem(ratio, m);
+			ChangeVolumeSoundMem((int)val, m);
 		}
 	}
 }
 
 void Sound::SetSeRatio(int ratio) {
-	if (SOUND_RATIO_MIN >= 0 && ratio < SOUND_RATIO_MAX) {
+	double val;
+
+	if (ratio >= SOUND_RATIO_MIN && ratio <= SOUND_RATIO_MAX) {
+		Sound::SE_Ratio = ratio;
+		val = (double)ratio * 255 / 100;
+
 		for (const auto& se : DataManager::SoundSE) {
-			ChangeVolumeSoundMem(ratio, se);
+			ChangeVolumeSoundMem((int)val, se);
 		}
 	}
-}
-
-void t(int num) {
-	int a;
-
-
 }
