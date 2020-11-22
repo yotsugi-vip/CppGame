@@ -7,6 +7,7 @@ SceneDebugInfo DataManager::sceneDebugInfo;
 SceneGame DataManager::sceneGame;
 SceneSelectMode DataManager::sceneSelectMode;
 TransTitleToMenu DataManager::transTitleToMenu;
+SceneConfig DataManager::sceneConfig;
 
 SceneBase* DataManager::SceneTable[] = {
 	&sceneInit,
@@ -15,7 +16,8 @@ SceneBase* DataManager::SceneTable[] = {
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,
-	&sceneDebugInfo
+	&sceneDebugInfo,
+	&sceneConfig
 };
 
 EventBase* DataManager::EventTable[] = {
@@ -25,7 +27,8 @@ EventBase* DataManager::EventTable[] = {
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,
-	&sceneDebugInfo
+	&sceneDebugInfo,
+	&sceneConfig
 };
 
 Task* DataManager::TaskTable[] = {
@@ -35,7 +38,8 @@ Task* DataManager::TaskTable[] = {
 	&sceneMenu,
 	&sceneSelectMode,
 	&sceneGame,
-	&sceneDebugInfo
+	&sceneDebugInfo,
+	&sceneConfig
 };
 
 int DataManager::FontTable[static_cast<int>(Fonts::MAX)] = { 0 };

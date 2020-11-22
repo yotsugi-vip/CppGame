@@ -25,7 +25,9 @@ enum class E_Scene {
 	Menu,
 	Select_Mode,
 	Game,
-	Debug
+	Debug,
+	Config,
+	MAX
 };
 
 enum class E_Common_GraphHandle {

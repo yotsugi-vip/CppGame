@@ -7,6 +7,7 @@
 #include "SceneGame.h"
 #include "TransTitleToMenu.h"
 #include "SceneSelectMode.h"
+#include "SceneConfig.h"
 #include "SceneInit.h"
 #include "Fps.h"
 #include "Task.h"
@@ -49,6 +50,23 @@ enum class Graph {
 	Mode_Easy,
 	Mode_Normal,
 	Mode_Hard,
+	Cnfig_SE,
+	Config_BGM,
+	Config_Default,
+	Config_Exit,
+	Num_0,
+	Num_1,
+	Num_2,
+	Num_3,
+	Num_4,
+	Num_5,
+	Num_6,
+	Num_7,
+	Num_8,
+	Num_9,
+	Num_per,
+	Num_kanma,
+	Num_ten,
 	MAX
 };
 
@@ -105,4 +123,5 @@ public:
 	static SceneGame sceneGame;
 	static SceneSelectMode sceneSelectMode;
 	static TransTitleToMenu transTitleToMenu;
+	static SceneConfig sceneConfig;
 };

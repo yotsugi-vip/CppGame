@@ -19,6 +19,9 @@ void SceneInit::Initialize() {
 	LoadDivGraph("asset\\9Splite_pink.png", 9, 3, 3, 16, 16, DataManager::TextBoxSprite[static_cast<int>(TextBox_Color::PINK)]);
 	LoadDivGraph("asset\\9Splite_gray.png", 9, 3, 3, 16, 16, DataManager::TextBoxSprite[static_cast<int>(TextBox_Color::GRAY)]);
 	LoadDivGraph("asset\\9Splite_black.png", 9, 3, 3, 16, 16, DataManager::TextBoxSprite[static_cast<int>(TextBox_Color::BLACK)]);
+
+	LoadDivGraph("asset\\Config.png", 4, 1, 4, 462, 64, &DataManager::GraphTable[static_cast<int>(Graph::Cnfig_SE)]);
+	LoadDivGraph("asset\\Number.png", 13, 13, 1, 64, 64, &DataManager::GraphTable[static_cast<int>(Graph::Num_0)]);
 }
 
 

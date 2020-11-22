@@ -26,6 +26,7 @@
     <ClCompile Include="Src\Player.cpp" />
     <ClCompile Include="Src\TransTitleToMenu.cpp" />
     <ClCompile Include="Src\Sound.cpp" />
+    <ClCompile Include="Src\SceneConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\main.h" />
@@ -47,6 +48,7 @@
     <ClInclude Include="Src\Player.h" />
     <ClInclude Include="Src\TransTitleToMenu.h" />
     <ClInclude Include="Src\Sound.h" />
+    <ClInclude Include="Src\SceneConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="asset\joji_shadow.png" />
@@ -57,5 +59,7 @@
     <Image Include="asset\9Splite_black.png" />
     <Image Include="asset\9Splite_gray.png" />
     <Image Include="asset\9Splite_pink.png" />
+    <Image Include="asset\Config.png" />
+    <Image Include="asset\Number.png" />
   </ItemGroup>
 </Project>

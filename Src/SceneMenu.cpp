@@ -8,19 +8,16 @@
 #include <DxLib.h>
 
 
-// ‚»‚Ì‚¤‚¿Input‚ÉˆÚ‚·
-bool CheckPush(E_Button_Type button);
-bool CheckKeep(E_Button_Type button, E_Button_State state);
-
 static void ChangeDebugMode();
 static void ChangeGameMode();
+static void ChangeConfig();
 static void ExitGame();
 static void dummy();
 
 T_MENU_BUTTON MenuButton[5] = {
 	{BUTTON_X_0,	BUTTON_Y_0,	Menu_1,	ChangeGameMode	},
 	{BUTTON_X_1,	BUTTON_Y_1,	Menu_2,	dummy			},
-	{BUTTON_X_2,	BUTTON_Y_2,	Menu_3,	dummy			},
+	{BUTTON_X_2,	BUTTON_Y_2,	Menu_3,	ChangeConfig	},
 	{BUTTON_X_3,	BUTTON_Y_3,	Menu_4,	ExitGame		},
 	{BUTTON_X_4,	BUTTON_Y_4,	Menu_5,	ChangeDebugMode	},
 };
@@ -136,6 +133,10 @@ void ChangeDebugMode() {
 
 void ChangeGameMode() {
 	SceneManager::NextScene = E_Scene::Select_Mode;
+}
+
+void ChangeConfig() {
+	SceneManager::NextScene = E_Scene::Config;
 }
 
 void ExitGame() {

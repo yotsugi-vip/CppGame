@@ -38,3 +38,9 @@ void Sound::SetSeRatio(int ratio) {
 		}
 	}
 }
+
+void t(int num) {
+	int a;
+
+
+}
