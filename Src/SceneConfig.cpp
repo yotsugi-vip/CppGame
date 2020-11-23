@@ -36,6 +36,8 @@ static pFunc ConfigFunc[4] = {
 void SceneConfig::Draw(){
 	int x, y;
 
+	DrawGraph(0, 0, SceneManager::GraphHandles[static_cast<int>(E_Common_GraphHandle::GH_Cream)], true);
+
 	if (Id == 3) {
 		DrawGraph(80, 100, DataManager::GraphTable[static_cast<int>(Graph::Cnfig_SE)], true);
 		GetGraphSize(DataManager::GraphTable[static_cast<int>(Graph::Cnfig_SE)], &x, &y);

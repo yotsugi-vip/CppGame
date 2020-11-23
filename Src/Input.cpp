@@ -8,6 +8,8 @@ T_INPUT Input::pre = { static_cast<int>(E_Button_State::Button_Off) };
 
 static int GetInputInfo(int val, int judge_on);
 static void EventCheck(int now, int pre, E_Button_Type button);
+static void GetKeyboadInput();
+static int InputConvert(int keyInfo);
 
 int GetInputInfo(int val, int judge_on) {
 	int ret;
@@ -38,9 +40,6 @@ void Input::Input_Main() {
 
 	// Pad入力取得
 	Pad::GetPadInput();
-
-	// キーボード入力取得
-	// Keyboad Get
 
 	// イベント発行
 	Input::EventLoop();
@@ -79,6 +78,7 @@ void Input::EventLoop() {
 }
 
 void Input::GetInput() {
+
 	Input::now.Circle = GetInputInfo(Pad::R_Buttons.Circle, 128);
 	Input::now.Cross = GetInputInfo(Pad::R_Buttons.Cross, 128);
 	Input::now.Triange = GetInputInfo(Pad::R_Buttons.Triangle, 128);
@@ -110,6 +110,9 @@ void Input::GetInput() {
 		Input::now.Down = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_RIGHT));
 		Input::now.Right = GetInputInfo(Pad::D_Pad, static_cast<int>(D_Pad_Direction::DOWN_RIGHT));
 	}	
+
+	// キーボード入力取得
+	GetKeyboadInput();
 }
 
 void Input::Event_Push_Button(E_Button_Type button) {
@@ -211,4 +214,31 @@ bool Input::CheckKeep(E_Button_Type button, E_Button_State state) {
 		break;
 	}
 	return ret;
+}
+
+void GetKeyboadInput() {
+	char keybuf[256] = { 0 };
+
+	// キーボード入力取得
+	GetHitKeyStateAll(keybuf);
+
+	Input::now.Circle |= InputConvert(keybuf[KEY_INPUT_RETURN]);
+	Input::now.Cross |= InputConvert(keybuf[KEY_INPUT_ESCAPE]);
+	Input::now.Up |= InputConvert(keybuf[KEY_INPUT_UP]);
+	Input::now.Down |= InputConvert(keybuf[KEY_INPUT_DOWN]);
+	Input::now.Left |= InputConvert(keybuf[KEY_INPUT_LEFT]);
+	Input::now.Right |= InputConvert(keybuf[KEY_INPUT_RIGHT]);
+}
+
+int InputConvert(int keyInfo) {
+	E_Button_State ret;
+
+	if (keyInfo == 1) {
+		ret = E_Button_State::Button_On;
+	}
+	else {
+		ret = E_Button_State::Button_Off;
+	}
+
+	return static_cast<int>(ret);
 }
